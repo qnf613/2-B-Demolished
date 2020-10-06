@@ -27,16 +27,16 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         //Check button up & down
-        bool hDown = Input.GetButtonDown("Horizontal");
+        bool hDown = Input.GetButton("Horizontal");
         bool hUp = Input.GetButtonUp("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
+        bool vDown = Input.GetButton("Vertical");
         bool vUp = Input.GetButtonUp("Vertical");
         //Check horizontal movement
-        if (hDown)
+        if (hDown || vUp)
         {
             isHorizonMove = true;
         }
-        else if (vDown)
+        else if (vDown || hUp)
         {
             isHorizonMove = false;
         }
