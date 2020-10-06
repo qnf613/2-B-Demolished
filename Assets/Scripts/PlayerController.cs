@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private GameObject bomb;
 
     //Component
     private Rigidbody2D rigid;
@@ -40,6 +41,12 @@ public class PlayerController : MonoBehaviour
         {
             isHorizonMove = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(bomb, transform.position, transform.rotation);
+        }
+
     }
     private void FixedUpdate()
     {

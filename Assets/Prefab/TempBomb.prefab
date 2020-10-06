@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2694216452587689333}
   - component: {fileID: 2694216452587689338}
   - component: {fileID: 2465135413310900923}
+  - component: {fileID: -1252493960281205422}
   m_Layer: 9
   m_Name: TempBomb
   m_TagString: Bomb
@@ -108,3 +109,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-1252493960281205422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2694216452587689339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4548fd29d361f5541b1b595fbf92ac04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

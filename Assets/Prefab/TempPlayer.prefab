@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2956994984157092398}
   - component: {fileID: 2956994984157092393}
   m_Layer: 9
-  m_Name: Player
+  m_Name: TempPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  bomb: {fileID: 2694216452587689339, guid: ed03da0a6cf97564f869ba13b7fce2b2, type: 3}
 --- !u!50 &2956994984157092398
 Rigidbody2D:
   serializedVersion: 4
