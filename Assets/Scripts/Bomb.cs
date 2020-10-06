@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField] private GameObject player;
+
+    //Component
+    private Rigidbody2D rigid;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private float countdown = 3f;
+
+    private void Start()
     {
-        
+        rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        player = GameObject.Find("Player");
+        Invoke("Blowup", countdown);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+    }
+
+    private void Blowup()
+    {
+        Destroy(gameObject);
     }
 }
