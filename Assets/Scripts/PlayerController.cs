@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -44,7 +45,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bomb, transform.position, transform.rotation);
+            Instantiate(bomb, new Vector2 (Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+            
         }
 
     }
