@@ -211,25 +211,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2738280243660956727, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092386, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_Name
       value: TempPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092393, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092398, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.839
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.65574455
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}

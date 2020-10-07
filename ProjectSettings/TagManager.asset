@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Bomb
+  - Objects
+  - PlayerRelated
+  - BombJustPlanted
   layers:
   - Default
   - TransparentFX
@@ -15,9 +17,9 @@ TagManager:
   - 
   - 
   - BackGround
-  - Playable
-  - 
-  - 
+  - Objects
+  - PlayerRelated
+  - Player
   - 
   - 
   - 
