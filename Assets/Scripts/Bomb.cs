@@ -9,7 +9,7 @@ public class Bomb : MonoBehaviour
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private float countdown = 3f;
+    [SerializeField] private float countdown = 3f;
     private float toBeObject = 0;
 
     private void Start()
