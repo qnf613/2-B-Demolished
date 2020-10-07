@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField] private GameObject explosion;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -29,7 +29,7 @@ public class Bomb : MonoBehaviour
 
         toBeObject += Time.deltaTime;
         
-        if (toBeObject >= 1)
+        if (toBeObject >= .8f)
         {
             gameObject.tag = "Objects";
         }
@@ -38,7 +38,10 @@ public class Bomb : MonoBehaviour
 
     private void Blowup()
     {
-        Destroy(gameObject);
+        Instantiate(explosion, transform.position, transform.rotation);
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, .5f);
+
     }
 
 
