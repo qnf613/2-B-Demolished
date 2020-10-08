@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Objects
+  - PlayerRelated
+  - BombJustPlanted
   layers:
   - Default
   - TransparentFX
@@ -13,10 +16,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - BackGround
+  - Objects
+  - PlayerRelated
+  - Player
   - 
   - 
   - 
@@ -40,4 +43,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Back
+    uniqueID: 494684773
+    locked: 0
+  - name: Mid
+    uniqueID: 1227570471
+    locked: 0
+  - name: Front
+    uniqueID: 3802663833
     locked: 0
