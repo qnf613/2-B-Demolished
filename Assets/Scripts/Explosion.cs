@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private int damage;
+    [SerializeField] public int damage;
 
     private void Start()
     {
@@ -19,10 +19,32 @@ public class Explosion : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //do different damage to other game objects depend on their tag
         if (other.tag == "Player")
         {
             PlayerController player = other.GetComponent<PlayerController>();
             player.currentHP--;
         }
+
+        else if (other.tag == "SoftBlock")
+        {
+            Blocks block = other.GetComponent<Blocks>();
+            if (!block.isDamaged)
+            {
+                block.isDamaged = true;
+                block.currentHP -= damage;
+            }
+        }
+
+        //else if (other.tag == "HardBlock")
+        //{
+        //    Blocks block = other.GetComponent<Blocks>();
+        //    if (!block.isDamaged)
+        //    {
+        //        block.isDamaged = true;
+        //        block.currentHP -= damage;
+        //    }
+        //}
+
     }
 }

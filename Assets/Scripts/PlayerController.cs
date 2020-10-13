@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject bomb;
+    public bool isDamaged = false;
     public int maxHP;
     public int currentHP;
     //Component

@@ -6,6 +6,7 @@ public class Bomb : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
     [SerializeField] private float countdown = 3f;
+    [SerializeField] private int damage;
     private float toBeObject = 0;
     //Component
     private Rigidbody2D rigid;
@@ -22,6 +23,9 @@ public class Bomb : MonoBehaviour
 
     private void Update()
     {
+        Explosion ex = explosion.GetComponent<Explosion>();
+        ex.damage = damage;
+
         if (!gameObject.CompareTag("BombJustPlanted"))
         {
             gameObject.layer = 9;
@@ -29,7 +33,7 @@ public class Bomb : MonoBehaviour
 
         toBeObject += Time.deltaTime;
         
-        if (toBeObject >= .8f)
+        if (toBeObject >= 1f)
         {
             gameObject.tag = "Objects";
         }
