@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    public LayerMask levelMask;
 
     private void Start()
     {
@@ -43,10 +44,33 @@ public class Bomb : MonoBehaviour
     private void Blowup()
     {
         Instantiate(explosion, transform.position, transform.rotation);
+        StartCoroutine(CreateExplosions(Vector2.up));
+        StartCoroutine(CreateExplosions(Vector2.right));
+        StartCoroutine(CreateExplosions(Vector2.down));
+        StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
         Destroy(gameObject, .5f);
 
     }
 
+    private IEnumerator CreateExplosions(Vector3 direction)
+    {
+        for (int i = 1; i < 2; i++)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, 0, .5f), direction, i, levelMask);
 
+            if (!hit.collider)
+            {
+                Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
+            }
+
+            else
+            {
+                break;
+            }
+
+            yield return new WaitForSeconds(.05f);
+        }
+
+    }
 }

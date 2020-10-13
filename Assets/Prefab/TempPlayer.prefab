@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 3
   bomb: {fileID: 1057459731951035670, guid: ed03da0a6cf97564f869ba13b7fce2b2, type: 3}
   isDamaged: 0
-  maxHP: 0
+  maxHP: 2
   currentHP: 0
 --- !u!50 &2956994984157092398
 Rigidbody2D:

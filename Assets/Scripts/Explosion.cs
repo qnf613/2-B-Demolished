@@ -36,15 +36,15 @@ public class Explosion : MonoBehaviour
             }
         }
 
-        //else if (other.tag == "HardBlock")
-        //{
-        //    Blocks block = other.GetComponent<Blocks>();
-        //    if (!block.isDamaged)
-        //    {
-        //        block.isDamaged = true;
-        //        block.currentHP -= damage;
-        //    }
-        //}
+        else if (other.tag == "HardBlock")
+        {
+            Blocks block = other.GetComponent<Blocks>();
+            if (!block.isDamaged && damage >= 3)
+            {
+                block.isDamaged = true;
+                block.currentHP -= damage;
+            }
+        }
 
     }
 }
