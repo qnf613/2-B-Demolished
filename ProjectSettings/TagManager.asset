@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Objects
   - PlayerRelated
   - BombJustPlanted
+  - MapObjects
+  - SoftBlock
+  - HardBlock
+  - Objects
   layers:
   - Default
   - TransparentFX
