@@ -5,12 +5,12 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
+    [SerializeField] private float countdown = 3f;
+    private float toBeObject = 0;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    [SerializeField] private float countdown = 3f;
-    private float toBeObject = 0;
 
     private void Start()
     {

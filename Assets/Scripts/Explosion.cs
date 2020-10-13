@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int damage;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
         Destroy(gameObject, .5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            player.currentHP--;
+        }
     }
 }

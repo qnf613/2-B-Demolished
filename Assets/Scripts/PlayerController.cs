@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private GameObject bomb;
-
+    public int maxHP;
+    public int currentHP;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
+        maxHP = 2;
+        currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -42,11 +45,16 @@ public class PlayerController : MonoBehaviour
         {
             isHorizonMove = false;
         }
-
+        //Bomb plant
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Instantiate(bomb, new Vector2 (Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
             
+        }
+        //DeathCondition
+        if (currentHP == 0)
+        {
+            Destroy(gameObject);
         }
 
     }
