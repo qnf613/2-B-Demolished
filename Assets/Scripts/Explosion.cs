@@ -46,10 +46,14 @@ public class Explosion : MonoBehaviour
             }
         }
 
-        if (other.tag == "Enemies")
+        if (other.tag == "damageTrigger")
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-            enemy.currentHP -= damage;
+            EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
+            enemy.enemyHP -= damage;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
     }
 }

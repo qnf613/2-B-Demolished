@@ -8,18 +8,20 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anima;
     [SerializeField] GameObject target;
-    public int maxHP;
-    public int currentHP;
+    [SerializeField] private int maxHP;
+    public static int currentHP;
+    //movement direction related
     [SerializeField] private int nextMove;
     private bool notMoving;
     private bool moveUp;
     private bool moveDown;
     private bool moveRight;
     private bool moveLeft;
+    //chasing player related
     [SerializeField] private bool chaser = false;
     [SerializeField] private bool isChasing;
 
-    private void Start()
+    private void Awake()
     {
         currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();

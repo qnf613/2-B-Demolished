@@ -7,20 +7,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private GameObject bomb;
     public bool isDamaged = false;
-    public int maxHP;
+    [SerializeField] private int maxHP;
     public int currentHP;
-    //Component
+    //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    //Values of movement
+    //values of movement
     private float h;
     private float v;
     private bool isHorizonMove;
     
-    private void Start()
+    private void Awake()
     {
-        maxHP = 2;
         currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
