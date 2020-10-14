@@ -20,7 +20,7 @@ public class Blocks : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    private void Update()
     {
         //Destroy Condition
         if (currentHP <= 0)

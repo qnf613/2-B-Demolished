@@ -26,9 +26,9 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
+
     private void Update()
     {
-
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         bool hUp = Input.GetButtonUp("Horizontal");
         bool vDown = Input.GetButton("Vertical");
         bool vUp = Input.GetButtonUp("Vertical");
-        //Check horizontal movement
+        //Cross direction movement
         if (hDown || vUp)
         {
             isHorizonMove = true;
@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
     private void FixedUpdate()
     {
         //Movement
