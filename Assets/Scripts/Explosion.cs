@@ -26,7 +26,7 @@ public class Explosion : MonoBehaviour
             player.currentHP--;
         }
 
-        else if (other.tag == "SoftBlock")
+        if (other.tag == "SoftBlock")
         {
             Blocks block = other.GetComponent<Blocks>();
             if (!block.isDamaged)
@@ -36,7 +36,7 @@ public class Explosion : MonoBehaviour
             }
         }
 
-        else if (other.tag == "HardBlock")
+        if (other.tag == "HardBlock")
         {
             Blocks block = other.GetComponent<Blocks>();
             if (!block.isDamaged && damage >= 3)
@@ -46,5 +46,10 @@ public class Explosion : MonoBehaviour
             }
         }
 
+        if (other.tag == "Enemies")
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            enemy.currentHP -= damage;
+        }
     }
 }

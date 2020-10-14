@@ -8,7 +8,8 @@ public class Enemy : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anima;
     [SerializeField] GameObject target;
-    [SerializeField] private int HP;
+    public int maxHP;
+    public int currentHP;
     [SerializeField] private int nextMove;
     private bool notMoving;
     private bool moveUp;
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
+        currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
@@ -29,7 +31,7 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         //death condition
-        if (HP <= 0)
+        if (currentHP <= 0)
         {
             Destroy(gameObject);
         }
@@ -135,6 +137,7 @@ public class Enemy : MonoBehaviour
             else if (Mathf.RoundToInt(targetPos.x) == Mathf.RoundToInt(transform.position.x))
             {
                 nextMove = 0;
+
                 if (Mathf.RoundToInt(targetPos.y) > Mathf.RoundToInt(transform.position.y))
                 {
                     nextMove = 1;

@@ -10,6 +10,7 @@ TagManager:
   - SoftBlock
   - HardBlock
   - Objects
+  - Enemies
   layers:
   - Default
   - TransparentFX
