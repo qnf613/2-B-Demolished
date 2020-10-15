@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1698746019}
   - component: {fileID: 1698746020}
   - component: {fileID: 1698746021}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: DamageTrigger
-  m_TagString: damageTrigger
+  m_TagString: DamageTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6154903058248609612}
   - component: {fileID: 6154903058248609600}
   - component: {fileID: 6154903058248609601}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: TempEnemy
   m_TagString: Enemies
   m_Icon: {fileID: 0}
