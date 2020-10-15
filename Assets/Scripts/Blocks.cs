@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Blocks : MonoBehaviour
 {
-    ////prefabs of pick ups
+    //prefabs of pick ups
     [SerializeField] private GameObject speedUp;
-    ////numbering for pick up
-    [SerializeField] private int pickupNum;
-    ////chance to get pick up item
+    //numbering for pick up
+    public int pickupNum;
+    //chance to get pick up item
     [SerializeField] [Tooltip("possibility of pickup items appear (%)")] private float pickupChance;
+    [SerializeField] private int generateOnce;
     public int maxHP;
     public int currentHP;
-    ////make block get damage once per .5 sec
+    //make block get damage once per .5 sec
     public bool isDamaged = false;
     [SerializeField] private float invincibleDuration = 1f;
     private float toBeVincible = 0;
@@ -23,6 +24,7 @@ public class Blocks : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;
+        generateOnce = 0;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -32,26 +34,10 @@ public class Blocks : MonoBehaviour
         //Destroy Condition
         if (currentHP <= 0)
         {
-            //pop up the random pick up item randomly when blocks are destroyed 
-            if (Random.Range(1, 101) <= pickupChance)
-            {
-                pickupNum = Random.Range(0, 3);
-                switch (pickupNum)
-                {
-                    case 0:
-                        Instantiate(speedUp, transform.position, transform.rotation);
-                        break;
-                    case 1:
-                        Instantiate(speedUp, transform.position, transform.rotation);
-                        break;
-                    case 2:
-                        Instantiate(speedUp, transform.position, transform.rotation);
-                        break;
-                }
+            GetComponent<SpriteRenderer>().enabled = false;
+            GeneratePickUp();
+            Destroy(gameObject, .3f);
 
-            }
-
-            Destroy(gameObject);
         }
 
         //Don't get damaged many times with one bomb
@@ -63,6 +49,31 @@ public class Blocks : MonoBehaviour
                 isDamaged = false;
             }
         }
+    }
+
+    private void GeneratePickUp()
+    {
+        //pop up the random pick up item randomly when blocks are destroyed 
+        if (Random.Range(1, 101) <= pickupChance && generateOnce < 1)
+        {
+            //for now, speed up item must appear after soft block destoryed
+            //pickupNum = Random.Range(0, 3);
+            //switch (pickupNum)
+            //{
+            //    case 0:
+            Instantiate(speedUp, transform.position, transform.rotation);
+            //break;
+            //case 1:
+            //    Instantiate(speedUp, transform.position, transform.rotation);
+            //    break;
+            //case 2:
+            //    Instantiate(speedUp, transform.position, transform.rotation);
+            //    break;
+            //}
+            generateOnce++;
+        }
+
+        
     }
 
 }

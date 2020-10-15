@@ -14,7 +14,7 @@ public class Explosion : MonoBehaviour
 
     private void Update()
     {
-        Destroy(gameObject, .5f);
+        Destroy(gameObject, .3f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -48,10 +48,20 @@ public class Explosion : MonoBehaviour
             //}
         }
 
-        if (other.tag == "damageTrigger")
+        if (other.tag == "DamageTrigger")
         {
             EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
             enemy.enemyHP -= damage;
+        }
+
+
+        if (other.tag == "PickUps")
+        {
+            PickUps pickup = other.GetComponent<PickUps>();
+            if (!pickup.isInvincible)
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 

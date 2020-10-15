@@ -4,15 +4,47 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float invincibleDuration = 1f;
+    private float toBeVincible = 0;
+    public bool isInvincible;
+    //component
+    private Rigidbody2D rigid;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
+    private void Awake()
     {
-        
+        isInvincible = true;
+        rigid = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        toBeVincible += Time.deltaTime;
+        if (toBeVincible >= invincibleDuration)
+        {
+            isInvincible = false;
+        }
     }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        //do different damage to other game objects depend on their tag
+        if (other.tag == "Player")
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            if (gameObject.name == "SpeedUp(Clone)")
+            {
+                if (player.speed < 7)
+                {
+                    player.speed += .8f;
+                }
+                Destroy(gameObject);
+            }
+        }
+    }
+
 }

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float speed;
     [SerializeField] private GameObject bomb;
     public bool isDamaged = false;
+    public float speed;
     [SerializeField] private int maxHP;
     public int currentHP;
     //component
