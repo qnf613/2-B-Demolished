@@ -4,15 +4,66 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int damage;
+    public bool bombTypeP;
+
+    private void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        Destroy(gameObject, .5f);
+        Destroy(gameObject, .3f);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        //do different damage to other game objects depend on their tag
+        if (other.tag == "Player")
+        {
+            PlayerController player = other.GetComponent<PlayerController>();
+            player.currentHP--;
+        }
+
+        if (other.tag == "SoftBlock")
+        {
+            Blocks block = other.GetComponent<Blocks>();
+            if (!block.isDamaged)
+            {
+                block.currentHP -= damage;
+            }
+        }
+
+        if (other.tag == "HardBlock")
+        {
+            Blocks block = other.GetComponent<Blocks>();
+            if (!block.isDamaged && bombTypeP)
+            {
+                block.currentHP -= damage;
+            }
+            else if (!block.isDamaged && !bombTypeP)
+            {
+                block.currentHP -= 0;
+            }
+        }
+
+        if (other.tag == "DamageTrigger")
+        {
+            EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
+            enemy.enemyHP -= damage;
+        }
+
+
+        if (other.tag == "PickUps")
+        {
+            PickUps pickup = other.GetComponent<PickUps>();
+            if (!pickup.isInvincible)
+            {
+                Destroy(other.gameObject);
+            }
+        }
+    }
+
+
 }
