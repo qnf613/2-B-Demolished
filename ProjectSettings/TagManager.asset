@@ -13,6 +13,7 @@ TagManager:
   - Enemies
   - PickUps
   - DamageTrigger
+  - Bomb
   layers:
   - Default
   - TransparentFX
@@ -23,14 +24,14 @@ TagManager:
   - 
   - 
   - BackGround
-  - Objects
-  - PlayerRelated
+  - 
+  - 
   - Player
   - HardBlocks
   - SoftBlocks
   - Undestroyable
-  - 
-  - 
+  - Enemy
+  - Bombs
   - 
   - 
   - 

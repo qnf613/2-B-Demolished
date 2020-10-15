@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3087281695518191928}
   - component: {fileID: 7364034966380403503}
   - component: {fileID: 8631474245761299304}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: TempPBomb
   m_TagString: BombJustPlanted
   m_Icon: {fileID: 0}

@@ -9,10 +9,13 @@ public class PlayerController : MonoBehaviour
     public float speed;
     [SerializeField] private int maxHP;
     public int currentHP;
+    public int maxBomb;
+    public int bombOnMap;
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    public LayerMask levelMask;
     //values of movement
     private float h;
     private float v;
@@ -48,8 +51,7 @@ public class PlayerController : MonoBehaviour
         //Bomb plant
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(bomb, new Vector2 (Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
-            
+            CreateBombs();
         }
         //DeathCondition
         if (currentHP <= 0)
@@ -64,5 +66,16 @@ public class PlayerController : MonoBehaviour
         //Movement
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
         rigid.velocity = moveVec * speed;
+    }
+
+    private void CreateBombs()
+    {
+        //limits one bomb plant per one tile
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.position, .1f, levelMask);
+        if (!hit.collider)
+        {
+            Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+        }
+
     }
 }

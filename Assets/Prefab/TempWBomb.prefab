@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7447373624121624652}
   - component: {fileID: 3148040651936342619}
   - component: {fileID: 4200574886110267932}
-  m_Layer: 10
+  m_Layer: 16
   m_Name: TempWBomb
   m_TagString: BombJustPlanted
   m_Icon: {fileID: 0}
@@ -126,8 +126,7 @@ MonoBehaviour:
     type: 3}
   countdown: 3
   damage: 1
-  typeP: 0
-  typeW: 1
+  isBombTypeP: 0
   levelMask:
     serializedVersion: 2
     m_Bits: 20480

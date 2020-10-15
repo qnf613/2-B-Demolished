@@ -31,6 +31,10 @@ public class Bomb : MonoBehaviour
         {
             ex.bombTypeP = true;
         }
+        else
+        {
+            ex.bombTypeP = false;
+        }
         
         if (!gameObject.CompareTag("BombJustPlanted"))
         {

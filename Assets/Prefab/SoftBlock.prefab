@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedUp: {fileID: 8807173433013311041, guid: fb38675d44258ea41a8ab953a10dfb32, type: 3}
   pickupNum: 0
-  pickupChance: 100
+  pickupChance: 50
+  generateOnce: 0
   maxHP: 2
   currentHP: 0
   isDamaged: 0

@@ -42,10 +42,10 @@ public class Explosion : MonoBehaviour
             {
                 block.currentHP -= damage;
             }
-            //else if (!block.isDamaged && !bombTypeP)
-            //{
-            //    block.currentHP -= 0;
-            //}
+            else if (!block.isDamaged && !bombTypeP)
+            {
+                block.currentHP -= 0;
+            }
         }
 
         if (other.tag == "DamageTrigger")
