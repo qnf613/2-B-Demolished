@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             
         }
         //DeathCondition
-        if (currentHP == 0)
+        if (currentHP <= 0)
         {
             Destroy(gameObject);
         }

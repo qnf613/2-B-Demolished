@@ -8,6 +8,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private float countdown = 3f;
     [SerializeField] private int damage;
     private float toBeObject = 0;
+    [SerializeField] private bool isBombTypeP;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -26,7 +27,11 @@ public class Bomb : MonoBehaviour
     {
         Explosion ex = explosion.GetComponent<Explosion>();
         ex.damage = damage;
-
+        if (isBombTypeP)
+        {
+            ex.bombTypeP = true;
+        }
+        
         if (!gameObject.CompareTag("BombJustPlanted"))
         {
             gameObject.layer = 9;
@@ -55,22 +60,46 @@ public class Bomb : MonoBehaviour
 
     private IEnumerator CreateExplosions(Vector3 direction)
     {
-        for (int i = 1; i < 2; i++)
+        if (isBombTypeP)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, 0, .5f), direction, i, levelMask);
-
-            if (!hit.collider)
+            for (int i = 1; i < 2; i++)
             {
-                Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
-            }
+                RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, 0, .5f), direction, i, levelMask);
 
-            else
+                if (!hit.collider)
+                {
+                    Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
+                }
+
+                else
+                {
+                    break;
+                }
+
+                yield return new WaitForSeconds(.05f);
+            }
+        }
+
+        else 
+        {
+            for (int i = 1; i < 3; i++)
             {
-                break;
-            }
+                RaycastHit2D hit = Physics2D.Raycast(transform.position + new Vector3(0, 0, .5f), direction, i, levelMask);
 
-            yield return new WaitForSeconds(.05f);
+                if (!hit.collider)
+                {
+                    Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
+                }
+
+                else
+                {
+                    break;
+                }
+
+                yield return new WaitForSeconds(.05f);
+            }
         }
 
     }
 }
+

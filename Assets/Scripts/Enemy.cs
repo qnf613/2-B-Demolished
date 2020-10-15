@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    //component
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anima;
@@ -189,7 +190,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D trigger)
     {
-        //
+        //end the chasing
         if (trigger.gameObject.CompareTag("Player") && chaser)
         {
             isChasing = false;

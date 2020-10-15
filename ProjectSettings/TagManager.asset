@@ -12,6 +12,7 @@ TagManager:
   - Objects
   - Enemies
   - damageTrigger
+  - PickUps
   layers:
   - Default
   - TransparentFX
@@ -25,9 +26,9 @@ TagManager:
   - Objects
   - PlayerRelated
   - Player
-  - Blocks
-  - 
-  - 
+  - HardBlocks
+  - SoftBlocks
+  - Undestroyable
   - 
   - 
   - 

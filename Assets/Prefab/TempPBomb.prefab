@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7364034966380403503}
   - component: {fileID: 8631474245761299304}
   m_Layer: 10
-  m_Name: TempBomb
+  m_Name: TempPBomb
   m_TagString: BombJustPlanted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1227570471
-  m_SortingLayer: 2
+  m_SortingLayerID: -492303463
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 928bff3dec7111c4b835a1c090f37288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -125,10 +125,11 @@ MonoBehaviour:
   explosion: {fileID: 237454056185691808, guid: 1c8c37c2aa78eb54d899e55a10e40c1e,
     type: 3}
   countdown: 3
-  damage: 2
+  damage: 3
+  isBombTypeP: 1
   levelMask:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 16384
 --- !u!58 &8631474245761299304
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] public int damage;
+    public int damage;
+    public bool bombTypeP;
 
     private void Start()
     {
-        
     }
 
 
@@ -31,7 +31,6 @@ public class Explosion : MonoBehaviour
             Blocks block = other.GetComponent<Blocks>();
             if (!block.isDamaged)
             {
-                block.isDamaged = true;
                 block.currentHP -= damage;
             }
         }
@@ -39,11 +38,14 @@ public class Explosion : MonoBehaviour
         if (other.tag == "HardBlock")
         {
             Blocks block = other.GetComponent<Blocks>();
-            if (!block.isDamaged && damage >= 3)
+            if (!block.isDamaged && bombTypeP)
             {
-                block.isDamaged = true;
                 block.currentHP -= damage;
             }
+            //else if (!block.isDamaged && !bombTypeP)
+            //{
+            //    block.currentHP -= 0;
+            //}
         }
 
         if (other.tag == "damageTrigger")
@@ -53,7 +55,5 @@ public class Explosion : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-    }
+
 }
