@@ -14,7 +14,6 @@ public class Bomb : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     public LayerMask levelMask;
-
     private void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -58,7 +57,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector2.down));
         StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
-        Destroy(gameObject, .5f);
+        Destroy(gameObject, .1f);
 
     }
 
@@ -94,6 +93,11 @@ public class Bomb : MonoBehaviour
                 {
                     Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
                 }
+                else if (hit.collider.gameObject.layer == 13)
+                {
+                    Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
+                    break;
+                }
 
                 else
                 {
@@ -104,6 +108,14 @@ public class Bomb : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Explosion")
+        {
+            Invoke("Blowup", .1f);
+        }
     }
 }
 

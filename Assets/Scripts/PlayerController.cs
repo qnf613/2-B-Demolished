@@ -35,9 +35,9 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         //Check button up & down
-        bool hDown = Input.GetButton("Horizontal");
+        bool hDown = Input.GetButtonDown("Horizontal");
         bool hUp = Input.GetButtonUp("Horizontal");
-        bool vDown = Input.GetButton("Vertical");
+        bool vDown = Input.GetButtonDown("Vertical");
         bool vUp = Input.GetButtonUp("Vertical");
         //Cross direction movement
         if (hDown || vUp)

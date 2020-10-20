@@ -48,7 +48,7 @@ public class Explosion : MonoBehaviour
             }
         }
 
-        if (other.tag == "DamageTrigger")
+        if (other.tag == "EnemyDamage")
         {
             EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
             enemy.enemyHP -= damage;

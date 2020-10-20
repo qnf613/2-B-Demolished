@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2801133428192669178}
   - component: {fileID: 2801133428192669179}
   - component: {fileID: 2801133428192669181}
-  - component: {fileID: -4605025345099647050}
+  - component: {fileID: -495479929631707153}
+  - component: {fileID: 8792302483491180938}
   m_Layer: 12
   m_Name: HardBlock
   m_TagString: HardBlock
@@ -96,8 +97,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9db874e6d43184e859b94511f8cf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedUp: {fileID: 0}
+  pickupNum: 0
+  pickupChance: 0
+  generateOnce: 0
   maxHP: 2
   currentHP: 0
+  isDamaged: 0
+  invincibleDuration: 1
 --- !u!61 &2801133428192669181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-4605025345099647050
+--- !u!50 &-495479929631707153
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -145,3 +152,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!61 &8792302483491180938
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2801133428192669183}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 0.85}
+  m_EdgeRadius: 0
