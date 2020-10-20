@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxHP;
     public int currentHP;
     public int maxBomb;
-    public static int bombOnMap;
+    public static int bombOnMap; //it used in both PlayerController & Bomb script
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;

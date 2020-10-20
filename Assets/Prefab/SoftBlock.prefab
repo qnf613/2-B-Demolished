@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedUp: {fileID: 8807173433013311041, guid: fb38675d44258ea41a8ab953a10dfb32, type: 3}
+  maxBombUp: {fileID: 6755102272871595813, guid: 84dbc308ebd88fd42b52c700d161f4b9,
+    type: 3}
   pickupNum: 0
-  pickupChance: 50
+  pickupChance: 20
   generateOnce: 0
   maxHP: 2
   currentHP: 0
@@ -147,7 +149,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b7c5edc2a046c7544a80309d506abe92, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

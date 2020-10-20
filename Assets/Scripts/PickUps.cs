@@ -45,6 +45,14 @@ public class PickUps : MonoBehaviour
                 Destroy(gameObject);
             }
             
+            if (gameObject.name == "ExtraBomb(Clone)")
+            {
+                if (player.maxBomb < 9)
+                {
+                    player.maxBomb++;
+                }
+                Destroy(gameObject);
+            }
         }
     }
 

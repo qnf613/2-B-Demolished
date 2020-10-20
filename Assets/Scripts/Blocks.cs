@@ -6,6 +6,7 @@ public class Blocks : MonoBehaviour
 {
     //prefabs of pick ups
     [SerializeField] private GameObject speedUp;
+    [SerializeField] private GameObject maxBombUp;
     //numbering for pick up
     public int pickupNum;
     //chance to get pick up item
@@ -32,12 +33,11 @@ public class Blocks : MonoBehaviour
     private void Update()
     {
         //Destroy Condition
-        if (currentHP <= 0)
+        if (currentHP <= 0 && generateOnce < 1)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GeneratePickUp();
-            Destroy(gameObject, .3f);
-
+            Destroy(gameObject, .1f);
         }
 
         //Don't get damaged many times with one bomb
@@ -54,23 +54,25 @@ public class Blocks : MonoBehaviour
     private void GeneratePickUp()
     {
         //pop up the random pick up item randomly when blocks are destroyed 
-        if (Random.Range(1, 101) <= pickupChance && generateOnce < 1)
+        if (Random.Range(1, 101) <= pickupChance)
         {
             //for now, speed up item must appear after soft block destoryed
-            //pickupNum = Random.Range(0, 3);
-            //switch (pickupNum)
-            //{
-            //    case 0:
-            Instantiate(speedUp, transform.position, transform.rotation);
-            //break;
-            //case 1:
-            //    Instantiate(speedUp, transform.position, transform.rotation);
-            //    break;
-            //case 2:
-            //    Instantiate(speedUp, transform.position, transform.rotation);
-            //    break;
-            //}
-            generateOnce++;
+            pickupNum = Random.Range(0, 3);
+            switch (pickupNum)
+            {
+                case 0:
+                    Instantiate(speedUp, transform.position, transform.rotation);
+                    generateOnce++;
+                    break;
+                case 1:
+                    Instantiate(maxBombUp, transform.position, transform.rotation);
+                    generateOnce++;
+                    break;
+                    //case 2:
+                    //    Instantiate(speedUp, transform.position, transform.rotation);
+                    //    break;
+                    //
+            }
         }
 
         
