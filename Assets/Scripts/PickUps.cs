@@ -53,6 +53,15 @@ public class PickUps : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+
+            if (gameObject.name == "HealthUp(Clone)")
+            {
+                if (player.currentHP < player.maxHP)
+                {
+                    player.currentHP++;
+                }
+                Destroy(gameObject);
+            }
         }
     }
 

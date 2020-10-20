@@ -7,6 +7,7 @@ public class Blocks : MonoBehaviour
     //prefabs of pick ups
     [SerializeField] private GameObject speedUp;
     [SerializeField] private GameObject maxBombUp;
+    [SerializeField] private GameObject hpUp;
     //numbering for pick up
     public int pickupNum;
     //chance to get pick up item
@@ -68,10 +69,10 @@ public class Blocks : MonoBehaviour
                     Instantiate(maxBombUp, transform.position, transform.rotation);
                     generateOnce++;
                     break;
-                    //case 2:
-                    //    Instantiate(speedUp, transform.position, transform.rotation);
-                    //    break;
-                    //
+                case 2:
+                    Instantiate(hpUp, transform.position, transform.rotation);
+                    break;
+
             }
         }
 

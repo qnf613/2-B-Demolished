@@ -97,10 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd372d87648b5c4083136a7c7dd1871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 1057459731951035670, guid: ed03da0a6cf97564f869ba13b7fce2b2, type: 3}
+  bomb: {fileID: 0}
   isDamaged: 0
+  invincibleTime: 2
   speed: 3
-  maxHP: 2
+  maxHP: 3
   currentHP: 0
   maxBomb: 2
   levelMask:

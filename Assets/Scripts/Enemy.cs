@@ -13,11 +13,6 @@ public class Enemy : MonoBehaviour
     public static int currentHP;
     //movement direction related
     [SerializeField] private int nextMove;
-    private bool notMoving;
-    private bool moveUp;
-    private bool moveDown;
-    private bool moveRight;
-    private bool moveLeft;
     //chasing player related
     [SerializeField] private bool chaser = false;
     [SerializeField] private bool isChasing;
@@ -39,46 +34,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //movement direction
-        switch (nextMove)
-        {
-            case 0:
-                notMoving = true;
-                moveUp = false;
-                moveDown = false;
-                moveLeft = false;
-                moveRight = false;
-                break;
-            case 1:
-                notMoving = false;
-                moveUp = true;
-                moveDown = false;
-                moveLeft = false;
-                moveRight = false;
-                break;
-            case 2:
-                notMoving = false;
-                moveUp = false;
-                moveDown = true;
-                moveLeft = false;
-                moveRight = false;
-                break;
-            case 3:
-                notMoving = false;
-                moveUp = false;
-                moveDown = false;
-                moveLeft = true;
-                moveRight = false;
-                break;
-            case 4:
-                notMoving = false;
-                moveUp = false;
-                moveDown = false;
-                moveLeft = false;
-                moveRight = true;
-                break;
-        }
-
     }
 
     private void FixedUpdate()
@@ -88,32 +43,26 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-        //moving && animations
-        if (notMoving)
+        //movement direction
+        switch (nextMove)
         {
-            rigid.velocity = new Vector2(0, 0);
+            case 0:
+                rigid.velocity = new Vector2(0, 0);
+                break;
+            case 1:
+                rigid.velocity = new Vector2(0, 1f);
+                break;
+            case 2:
+                rigid.velocity = new Vector2(0, -1f);
+                break;
+            case 3:
+                rigid.velocity = new Vector2(1f, 0);
+                break;
+            case 4:
+                rigid.velocity = new Vector2(-1f, 0);
+                break;
         }
-
-        if (moveUp)
-        {
-            rigid.velocity = new Vector2(0, 1f);
-        }
-
-        if (moveDown)
-        {
-            rigid.velocity = new Vector2(0, -1f);
-        }
-
-        if (moveRight)
-        {
-            rigid.velocity = new Vector2(1f, 0);
-        }
-
-        if (moveLeft)
-        {
-            rigid.velocity = new Vector2(-1f, 0);
-        }
-
+        
         //animation
         //if (rigid.velocity.normalized.x != 0)
         //{
@@ -161,7 +110,7 @@ public class Enemy : MonoBehaviour
         //decide direction to move: 0 stop, 1 up, 2 down, 3 left, 4 right
         nextMove = Random.Range(0, 5);
         //makes the enemy's direction deciding more randomly
-        float nextDirectionTime = Random.Range(2f, 4f);
+        float nextDirectionTime = Random.Range(1f, 2f);
         yield return new WaitForSeconds(nextDirectionTime);
         //repeat this method itself
         StartCoroutine("ChangeMovement");
