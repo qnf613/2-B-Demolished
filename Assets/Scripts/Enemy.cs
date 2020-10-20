@@ -76,12 +76,13 @@ public class Enemy : MonoBehaviour
         if (isChasing)
         {
             Vector3 targetPos = target.transform.position;
-            if (Mathf.RoundToInt(targetPos.x) < Mathf.RoundToInt(transform.position.x))
+            
+            if (Mathf.RoundToInt(targetPos.x) > Mathf.RoundToInt(transform.position.x))
             {
                 nextMove = 3;
             }
 
-            else if (Mathf.RoundToInt(targetPos.x) > Mathf.RoundToInt(transform.position.x))
+            else if (Mathf.RoundToInt(targetPos.x) < Mathf.RoundToInt(transform.position.x))
             {
                 nextMove = 4;
             }

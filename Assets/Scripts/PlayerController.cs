@@ -90,4 +90,13 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemies")
+        {
+            currentHP--;
+            isDamaged = true;
+        }
+    }
 }

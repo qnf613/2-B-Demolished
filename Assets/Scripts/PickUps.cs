@@ -59,8 +59,8 @@ public class PickUps : MonoBehaviour
                 if (player.currentHP < player.maxHP)
                 {
                     player.currentHP++;
+                    Destroy(gameObject);
                 }
-                Destroy(gameObject);
             }
         }
     }
