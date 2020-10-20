@@ -23,7 +23,11 @@ public class Explosion : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerController player = other.GetComponent<PlayerController>();
-            player.currentHP--;
+            if (!player.isDamaged)
+            {
+                player.currentHP--;
+                player.isDamaged = true;
+            }
         }
 
         if (other.tag == "SoftBlock")

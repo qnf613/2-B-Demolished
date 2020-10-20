@@ -3339,6 +3339,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4840950153566739554, guid: bf806c97f8c3cac4691092f7f5419d6d,
         type: 3}
+    - target: {fileID: 2956994984157092397, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: invincibleTime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.x

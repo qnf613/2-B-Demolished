@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameObject bomb;
     public bool isDamaged = false;
+    [SerializeField] private float invincibleTime;
+    private float toBeVincible;
     public float speed;
     [SerializeField] private int maxHP;
     public int currentHP;
@@ -54,7 +56,16 @@ public class PlayerController : MonoBehaviour
             bombOnMap++;
             CreateBombs();
         }
-        //DeathCondition
+        //Damage taken condition & invincible
+        if (isDamaged)
+        {
+            toBeVincible += Time.deltaTime;
+            if (toBeVincible >= invincibleTime)
+            {
+                isDamaged = false;
+            }
+        }
+        //Death condition
         if (currentHP <= 0)
         {
             Destroy(gameObject);
