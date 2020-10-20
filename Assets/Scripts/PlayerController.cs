@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxHP;
     public int currentHP;
     public int maxBomb;
-    public int bombOnMap;
+    public static int bombOnMap;
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -49,8 +49,9 @@ public class PlayerController : MonoBehaviour
             isHorizonMove = false;
         }
         //Bomb plant
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && bombOnMap < maxBomb)
         {
+            bombOnMap++;
             CreateBombs();
         }
         //DeathCondition

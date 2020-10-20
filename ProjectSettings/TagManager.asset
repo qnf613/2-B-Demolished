@@ -13,7 +13,9 @@ TagManager:
   - Enemies
   - PickUps
   - DamageTrigger
-  - Bomb
+  - EnemyDamage
+  - Explosion
+  - PlayerBomb
   layers:
   - Default
   - TransparentFX

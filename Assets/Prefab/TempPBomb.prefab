@@ -128,9 +128,6 @@ MonoBehaviour:
   countdown: 3
   damage: 3
   isBombTypeP: 1
-  levelMask1:
-    serializedVersion: 2
-    m_Bits: 0
   levelMask:
     serializedVersion: 2
     m_Bits: 16384

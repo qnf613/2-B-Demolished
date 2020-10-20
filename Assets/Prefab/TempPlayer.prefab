@@ -102,8 +102,7 @@ MonoBehaviour:
   speed: 3
   maxHP: 2
   currentHP: 0
-  maxBomb: 0
-  bombOnMap: 0
+  maxBomb: 3
   levelMask:
     serializedVersion: 2
     m_Bits: 65536

@@ -44,7 +44,7 @@ public class Bomb : MonoBehaviour
         
         if (toBeObject >= 1f)
         {
-            gameObject.tag = "Objects";
+            gameObject.tag = "PlayerBomb";
         }
 
     }
@@ -57,6 +57,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector2.down));
         StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
+        PlayerController.bombOnMap--;
         Destroy(gameObject, .1f);
 
     }
@@ -92,11 +93,6 @@ public class Bomb : MonoBehaviour
                 if (!hit.collider)
                 {
                     Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
-                }
-                else if (hit.collider.gameObject.layer == 13)
-                {
-                    Instantiate(explosion, transform.position + (i * direction), explosion.transform.rotation);
-                    break;
                 }
 
                 else
