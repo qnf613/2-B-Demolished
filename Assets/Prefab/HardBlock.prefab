@@ -100,6 +100,7 @@ MonoBehaviour:
   speedUp: {fileID: 8807173433013311041, guid: fb38675d44258ea41a8ab953a10dfb32, type: 3}
   maxBombUp: {fileID: 6755102272871595813, guid: 84dbc308ebd88fd42b52c700d161f4b9,
     type: 3}
+  hpUp: {fileID: 1303417994693001417, guid: 2aa8475546384ef4a9ce7e4844be30b6, type: 3}
   pickupNum: 0
   pickupChance: 0
   generateOnce: 0

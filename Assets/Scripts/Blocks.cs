@@ -71,12 +71,10 @@ public class Blocks : MonoBehaviour
                     break;
                 case 2:
                     Instantiate(hpUp, transform.position, transform.rotation);
+                    generateOnce++;
                     break;
-
             }
         }
-
-        
     }
 
 }
