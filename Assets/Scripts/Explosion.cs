@@ -56,8 +56,8 @@ public class Explosion : MonoBehaviour
 
         if (other.tag == "EnemyDamage")
         {
-            EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
-            enemy.enemyHP -= exDamage;
+            Enemy enemy = other.GetComponentInParent<Enemy>();
+            enemy.currentHP -= exDamage;
         }
 
 

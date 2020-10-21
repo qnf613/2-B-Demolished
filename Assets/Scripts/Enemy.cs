@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject target;
     //other values
     [SerializeField] private int maxHP;
-    public static int currentHP;
+    public int currentHP;
     [SerializeField] private int speed = 1;
     //movement direction related
     [SerializeField] private int nextMove;
