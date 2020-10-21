@@ -7,7 +7,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private GameObject explosion;
     [SerializeField] private float countdown = 3f;
     [SerializeField] private int damage;
-    private float toBeObject = 0;
+    private float toBeNormalBomb = 0;
     [SerializeField] private bool isBombTypeP;
     //Component
     private Rigidbody2D rigid;
@@ -16,6 +16,7 @@ public class Bomb : MonoBehaviour
     public LayerMask levelMask;
     private void Start()
     {
+        gameObject.layer = 16;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -34,17 +35,17 @@ public class Bomb : MonoBehaviour
         {
             ex.bombTypeP = false;
         }
-        
-        if (!gameObject.CompareTag("BombJustPlanted"))
-        {
-            gameObject.layer = 9;
-        }
 
-        toBeObject += Time.deltaTime;
-        
-        if (toBeObject >= 1f)
+        toBeNormalBomb += Time.deltaTime;
+
+        if (toBeNormalBomb >= 1f)
         {
             gameObject.tag = "PlayerBomb";
+        }
+
+        if (!gameObject.CompareTag("BombJustPlanted"))
+        {
+            gameObject.layer = 15;
         }
 
     }

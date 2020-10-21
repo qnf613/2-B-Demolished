@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2956994984157092397}
   - component: {fileID: 2956994984157092398}
   - component: {fileID: 6777118840563650261}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: TempPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd372d87648b5c4083136a7c7dd1871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 0}
+  bomb: {fileID: 4840950153566739554, guid: bf806c97f8c3cac4691092f7f5419d6d, type: 3}
   isDamaged: 0
   invincibleTime: 2
   speed: 3

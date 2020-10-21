@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1698746020}
   - component: {fileID: 1698746021}
   - component: {fileID: 8291816412572078199}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: DamageTrigger
   m_TagString: EnemyDamage
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6154903058248609600}
   - component: {fileID: 6154903058248609601}
   - component: {fileID: 1692877111208354320}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: TempEnemy
   m_TagString: Enemies
   m_Icon: {fileID: 0}
@@ -194,9 +194,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 6154903058248609611}
   maxHP: 2
+  speed: 1
   nextMove: 0
+  isTargeting: 0
   chaser: 1
-  isChasing: 0
+  charger: 0
+  chargeDuration: 2
+  bomber: 0
 --- !u!50 &6154903058248609600
 Rigidbody2D:
   serializedVersion: 4

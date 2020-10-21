@@ -59,11 +59,17 @@ public class PlayerController : MonoBehaviour
         //Damage taken condition & invincible
         if (isDamaged)
         {
+            gameObject.layer = 10;
             toBeVincible += Time.deltaTime;
             if (toBeVincible >= invincibleTime)
             {
                 isDamaged = false;
             }
+        }
+        else if (!isDamaged)
+        {
+            gameObject.layer = 9;
+            toBeVincible = 0;
         }
         //Death condition
         if (currentHP <= 0)
@@ -93,7 +99,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Enemies")
+        if (other.gameObject.tag == "Enemies" && !isDamaged)
         {
             currentHP--;
             isDamaged = true;
