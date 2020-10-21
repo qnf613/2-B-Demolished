@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool chaser = false;
     [SerializeField] private bool charger = false;
     [SerializeField] private float chargeDuration = 2f;
-    [SerializeField]private float holding = 0;
-    [SerializeField] private float charging = 0;
+    private float holding = 0;
+    private float charging = 0;
     [SerializeField] private bool isHolding = false;
     [SerializeField] private bool isCharging = false;
     //1 = up, 2 = down, 3 = right, 4 = left

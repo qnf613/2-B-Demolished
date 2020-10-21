@@ -26,14 +26,14 @@ TagManager:
   - 
   - 
   - BackGround
-  - 
-  - 
   - Player
+  - PlayerDamaged
+  - Enemy
   - HardBlocks
   - SoftBlocks
   - Undestroyable
-  - Enemy
   - Bombs
+  - BombJustPlant
   - 
   - 
   - 
