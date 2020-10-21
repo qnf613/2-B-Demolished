@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public int damage;
+    public int exDamage;
     public bool bombTypeP;
 
     private void Start()
     {
+
     }
 
 
     private void Update()
     {
         Destroy(gameObject, .3f);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,7 +37,7 @@ public class Explosion : MonoBehaviour
             Blocks block = other.GetComponent<Blocks>();
             if (!block.isDamaged)
             {
-                block.currentHP -= damage;
+                block.currentHP -= exDamage;
             }
         }
 
@@ -44,7 +46,7 @@ public class Explosion : MonoBehaviour
             Blocks block = other.GetComponent<Blocks>();
             if (!block.isDamaged && bombTypeP)
             {
-                block.currentHP -= damage;
+                block.currentHP -= exDamage;
             }
             else if (!block.isDamaged && !bombTypeP)
             {
@@ -55,7 +57,7 @@ public class Explosion : MonoBehaviour
         if (other.tag == "EnemyDamage")
         {
             EnemyDamageTrigger enemy = other.GetComponent<EnemyDamageTrigger>();
-            enemy.enemyHP -= damage;
+            enemy.enemyHP -= exDamage;
         }
 
 

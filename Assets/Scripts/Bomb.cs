@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
     private void Update()
     {
         Explosion ex = explosion.GetComponent<Explosion>();
-        ex.damage = damage;
+        ex.exDamage = damage;
         if (isBombTypeP)
         {
             ex.bombTypeP = true;

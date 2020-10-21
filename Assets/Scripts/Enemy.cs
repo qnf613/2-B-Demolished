@@ -42,6 +42,7 @@ public class Enemy : MonoBehaviour
         //death condition
         if (currentHP <= 0)
         {
+            Debug.Log("Dead");
             Destroy(gameObject);
         }
 
