@@ -126,7 +126,7 @@ MonoBehaviour:
   explosion: {fileID: 237454056185691808, guid: 1c8c37c2aa78eb54d899e55a10e40c1e,
     type: 3}
   countdown: 3
-  damage: 1
+  damage: 2
   isBombTypeP: 0
   levelMask:
     serializedVersion: 2
