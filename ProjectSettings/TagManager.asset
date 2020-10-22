@@ -4,9 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Objects
   - PlayerRelated
   - BombJustPlanted
+  - MapObjects
+  - SoftBlock
+  - HardBlock
+  - Objects
+  - Enemies
+  - PickUps
+  - DamageTrigger
+  - EnemyDamage
+  - Explosion
+  - PlayerBomb
   layers:
   - Default
   - TransparentFX
@@ -17,14 +26,14 @@ TagManager:
   - 
   - 
   - BackGround
-  - Objects
-  - PlayerRelated
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerDamaged
+  - Enemy
+  - HardBlocks
+  - SoftBlocks
+  - Undestroyable
+  - Bombs
+  - BombJustPlant
   - 
   - 
   - 
