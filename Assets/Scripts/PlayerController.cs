@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public int maxHP;
     public int currentHP;
     public int maxBomb;
-    public static int bombOnMap; //it used in both PlayerController & Bomb script
+    public static int bombOnMap; //it used in PlayerController, Bomb, BombManager scripts
+    [SerializeField] private int tempMaxBombViwer;
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        tempMaxBombViwer = bombOnMap;
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -42,19 +44,42 @@ public class PlayerController : MonoBehaviour
         bool vDown = Input.GetButtonDown("Vertical");
         bool vUp = Input.GetButtonUp("Vertical");
         //Cross direction movement
-        if (hDown || vUp)
+        if (hDown)
         {
             isHorizonMove = true;
         }
-        else if (vDown || hUp)
+        else if (vDown)
         {
             isHorizonMove = false;
         }
-        //Bomb plant
-        if (Input.GetKeyDown(KeyCode.Space) && bombOnMap < maxBomb)
+        else if (hUp || vUp)
         {
-            bombOnMap++;
+            isHorizonMove = h != 0;
+        }
+
+        //Animation
+        if (animator.GetInteger("hAxisRaw") != h)
+        {
+            animator.SetBool("isChange", true);
+            animator.SetInteger("hAxisRaw", (int)h);
+        }
+        else if (animator.GetInteger("vAxisRaw") != v)
+        {
+            animator.SetBool("isChange", true);
+            animator.SetInteger("vAxisRaw", (int)v);
+        }
+        else
+        {
+            animator.SetBool("isChange", false);
+        }
+        //Bomb plant
+        if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)
+        {
             CreateBombs();
+        }
+        if (bombOnMap <= 0)
+        {
+            bombOnMap = 0;
         }
         //Damage taken condition & invincible
         if (isDamaged)
@@ -92,6 +117,7 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.position, .1f, levelMask);
         if (!hit.collider)
         {
+            bombOnMap++;
             Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
         }
 

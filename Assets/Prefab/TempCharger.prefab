@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 2453285233579465699}
   maxHP: 2
+  currentHP: 0
   speed: 1
   nextMove: 0
   isTargeting: 0
@@ -164,17 +165,17 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.45, y: -0.45}
-  - {x: 0.45, y: -2.5}
-  - {x: -0.45, y: -2.5}
+  - {x: 0.45, y: -4}
+  - {x: -0.45, y: -4}
   - {x: -0.45, y: -0.45}
-  - {x: -2.5, y: -0.45}
-  - {x: -2.5, y: 0.45}
+  - {x: -4, y: -0.45}
+  - {x: -4, y: 0.45}
   - {x: -0.45, y: 0.45}
-  - {x: -0.45, y: 2.5}
-  - {x: 0.45, y: 2.5}
+  - {x: -0.45, y: 4}
+  - {x: 0.45, y: 4}
   - {x: 0.45, y: 0.45}
-  - {x: 2.5, y: 0.45}
-  - {x: 2.5, y: -0.45}
+  - {x: 4, y: 0.45}
+  - {x: 4, y: -0.45}
   - {x: 0.45, y: -0.45}
 --- !u!1 &8602238491258550794
 GameObject:
@@ -186,7 +187,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8602238491258550795}
   - component: {fileID: 8602238491258550796}
-  - component: {fileID: 8602238491258550797}
   - component: {fileID: 320663000475526367}
   m_Layer: 11
   m_Name: DamageTrigger
@@ -235,19 +235,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8602238491258550797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8602238491258550794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b416022ae263408530b8d3e6eda8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 0
 --- !u!50 &320663000475526367
 Rigidbody2D:
   serializedVersion: 4

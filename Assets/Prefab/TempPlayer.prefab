@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -492303463
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -2311659948842064771, guid: 4ed9ee060ac70904da46e41073bcccc5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,6 +104,7 @@ MonoBehaviour:
   maxHP: 3
   currentHP: 0
   maxBomb: 2
+  tempMaxBombViwer: 0
   levelMask:
     serializedVersion: 2
     m_Bits: 65536
