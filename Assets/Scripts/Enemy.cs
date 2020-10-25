@@ -74,10 +74,12 @@ public class Enemy : MonoBehaviour
             chargeDirection = 0;
             speed = originalSpeed;
             charging = 0;
+            anima.SetBool("isCharge", false);
         }
         else if (isCharging)
         {
             charging += Time.deltaTime;
+            anima.SetBool("isCharge", true);
         }
 
         //animation
@@ -304,6 +306,7 @@ public class Enemy : MonoBehaviour
         else if (charging >= chargeDuration)
         {
             isCharging = false;
+            anima.SetBool("isCharge", false);
         }
     }
 
