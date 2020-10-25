@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2956994984157092397}
   - component: {fileID: 2956994984157092398}
   - component: {fileID: 6777118840563650261}
+  - component: {fileID: 1530799963}
   m_Layer: 9
   m_Name: TempPlayer
   m_TagString: Player
@@ -145,3 +146,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.7, y: 0.95}
   m_Direction: 0
+--- !u!95 &1530799963
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2956994984157092386}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b943e3b360c86114aaf31dcea3e38956, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

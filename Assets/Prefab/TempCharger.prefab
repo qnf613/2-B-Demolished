@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2453285233579465704}
   - component: {fileID: 6926259801728882360}
   - component: {fileID: 7311872979247334136}
+  - component: {fileID: 8585837479789992518}
   m_Layer: 11
   m_Name: TempCharger
   m_TagString: Enemies
@@ -165,18 +166,37 @@ EdgeCollider2D:
   m_EdgeRadius: 0
   m_Points:
   - {x: 0.45, y: -0.45}
-  - {x: 0.45, y: -4}
-  - {x: -0.45, y: -4}
+  - {x: 0.45, y: -3.5}
+  - {x: -0.45, y: -3.5}
   - {x: -0.45, y: -0.45}
-  - {x: -4, y: -0.45}
-  - {x: -4, y: 0.45}
+  - {x: -3.5, y: -0.45}
+  - {x: -3.5, y: 0.45}
   - {x: -0.45, y: 0.45}
-  - {x: -0.45, y: 4}
-  - {x: 0.45, y: 4}
+  - {x: -0.45, y: 3.5}
+  - {x: 0.45, y: 3.5}
   - {x: 0.45, y: 0.45}
-  - {x: 4, y: 0.45}
-  - {x: 4, y: -0.45}
+  - {x: 3.5, y: 0.45}
+  - {x: 3.5, y: -0.45}
   - {x: 0.45, y: -0.45}
+--- !u!95 &8585837479789992518
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453285233579465699}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9878f1ca0df06624aa8852193eac7fc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8602238491258550794
 GameObject:
   m_ObjectHideFlags: 0

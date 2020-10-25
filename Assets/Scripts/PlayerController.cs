@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    private Animator anima;
     public LayerMask levelMask;
     //values of movement
     private float h;
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>();
+        anima = GetComponent<Animator>();
     }
 
     private void Update()
@@ -58,19 +58,19 @@ public class PlayerController : MonoBehaviour
         }
 
         //Animation
-        if (animator.GetInteger("hAxisRaw") != h)
+        if (anima.GetInteger("hAxisRaw") != h)
         {
-            animator.SetBool("isChange", true);
-            animator.SetInteger("hAxisRaw", (int)h);
+            anima.SetBool("isChange", true);
+            anima.SetInteger("hAxisRaw", (int)h);
         }
-        else if (animator.GetInteger("vAxisRaw") != v)
+        else if (anima.GetInteger("vAxisRaw") != v)
         {
-            animator.SetBool("isChange", true);
-            animator.SetInteger("vAxisRaw", (int)v);
+            anima.SetBool("isChange", true);
+            anima.SetInteger("vAxisRaw", (int)v);
         }
         else
         {
-            animator.SetBool("isChange", false);
+            anima.SetBool("isChange", false);
         }
         //Bomb plant
         if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)

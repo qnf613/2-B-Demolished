@@ -12,25 +12,33 @@ public class Enemy : MonoBehaviour
     //other values
     [SerializeField] private int maxHP;
     public int currentHP;
-    [SerializeField] private int speed = 1;
+    [SerializeField] private int speed;
+    private int hSpeed;
+    private int vSpeed;
     //movement direction related
     [SerializeField] private int nextMove;
     //target player related
     [SerializeField] private bool isTargeting;
+    //enemy type variation
     [SerializeField] private bool chaser = false;
     [SerializeField] private bool charger = false;
     [SerializeField] private float chargeDuration = 2f;
+    private int originalSpeed;
     private float holding = 0;
     private float charging = 0;
     [SerializeField] private bool isHolding = false;
     [SerializeField] private bool isCharging = false;
-    //1 = up, 2 = down, 3 = right, 4 = left
-    private int chargeDirection;
+    private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
     [SerializeField] private bool bomber = false;
 
     private void Awake()
     {
         currentHP = maxHP;
+        //hSpeed & vSpeed inheritance speed's value to be used in animator
+        hSpeed = speed;
+        vSpeed = speed;
+        //keep original speed for 'charger' to back to normal speed from charge speed
+        originalSpeed = speed;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
@@ -64,14 +72,29 @@ public class Enemy : MonoBehaviour
         if (!isCharging)
         {
             chargeDirection = 0;
-            speed = 1;
+            speed = originalSpeed;
             charging = 0;
         }
         else if (isCharging)
         {
             charging += Time.deltaTime;
         }
-       
+
+        //animation
+        if (anima.GetInteger("hMove") != hSpeed)
+        {
+            anima.SetBool("isChange", true);
+            anima.SetInteger("hMove", hSpeed);
+        }
+        else if (anima.GetInteger("vMove") != vSpeed)
+        {
+            anima.SetBool("isChange", true);
+            anima.SetInteger("vMove", vSpeed);
+        }
+        else
+        {
+            anima.SetBool("isChange", false);
+        }
     }
 
     private void FixedUpdate()
@@ -99,36 +122,36 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-        //movement direction
+        //movement direction && animation
         switch (nextMove)
         {
             case 0:
-                rigid.velocity = new Vector2(0, 0);
+                vSpeed = 0;
+                hSpeed = 0;
+                rigid.velocity = new Vector2(vSpeed, hSpeed);
                 break;
             case 1:
-                rigid.velocity = new Vector2(0, speed);
+                hSpeed = 0;
+                vSpeed = speed;
+                rigid.velocity = new Vector2(hSpeed, vSpeed);
                 break;
             case 2:
-                rigid.velocity = new Vector2(0, -speed);
+                hSpeed = 0;
+                vSpeed = -speed;
+                rigid.velocity = new Vector2(hSpeed, vSpeed);
                 break;
             case 3:
-                rigid.velocity = new Vector2(speed, 0);
+                hSpeed = speed;
+                vSpeed = 0;
+                rigid.velocity = new Vector2(hSpeed, vSpeed);
                 break;
             case 4:
-                rigid.velocity = new Vector2(-speed, 0);
+                hSpeed = -speed;
+                vSpeed = 0;
+                rigid.velocity = new Vector2(hSpeed, vSpeed);
                 break;
         }
         
-        //animation
-        //if (rigid.velocity.normalized.x != 0)
-        //{
-        //    anima.SetBool("isWalking", true);
-        //}
-        //else
-        //{
-        //    anima.SetBool("isWalking", false);
-        //}
-
     }
 
     private void OnTriggerEnter2D(Collider2D trigger)
@@ -213,7 +236,6 @@ public class Enemy : MonoBehaviour
         if (holding < 2f)
         {
             Debug.ClearDeveloperConsole();
-            Debug.Log("holding...");
             rigid.velocity = new Vector2(0, 0);
 
             if (Mathf.Abs(targetPos.y - myPos.y) > Mathf.Abs(targetPos.x - myPos.x))
@@ -257,16 +279,24 @@ public class Enemy : MonoBehaviour
             switch (chargeDirection)
             {
                 case 1:
-                    rigid.velocity = new Vector2(0, speed);
+                    hSpeed = 0;
+                    vSpeed = speed;
+                    rigid.velocity = new Vector2(hSpeed, vSpeed);
                     break;
                 case 2:
-                    rigid.velocity = new Vector2(0, -speed);
+                    hSpeed = 0; 
+                    vSpeed = -speed;
+                    rigid.velocity = new Vector2(hSpeed, vSpeed);
                     break;
                 case 3:
-                    rigid.velocity = new Vector2(speed, 0);
+                    hSpeed = speed;
+                    vSpeed = 0;
+                    rigid.velocity = new Vector2(hSpeed, vSpeed);
                     break;
                 case 4:
-                    rigid.velocity = new Vector2(-speed, 0);
+                    hSpeed = -speed;
+                    vSpeed = 0;
+                    rigid.velocity = new Vector2(hSpeed, vSpeed);
                     break;
             }
         }
