@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
         StartCoroutine("ChangeMovement");
+        anima.SetBool("isCharge", false);
     }
 
     private void Update()
