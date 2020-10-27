@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isCharging = false;
     private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
     [SerializeField] private bool bomber = false;
+    //check up how many enemies on the stage
+    public static int number;
 
     private void Awake()
     {
@@ -44,6 +46,10 @@ public class Enemy : MonoBehaviour
         anima = GetComponent<Animator>();
         StartCoroutine("ChangeMovement");
         anima.SetBool("isCharge", false);
+        if (gameObject.activeSelf == true)
+        {
+            number++;
+        }
     }
 
     private void Update()
@@ -51,7 +57,7 @@ public class Enemy : MonoBehaviour
         //death condition
         if (currentHP <= 0)
         {
-            Debug.Log("Dead");
+            number--;
             Destroy(gameObject);
         }
 

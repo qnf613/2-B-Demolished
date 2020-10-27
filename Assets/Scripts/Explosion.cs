@@ -7,16 +7,9 @@ public class Explosion : MonoBehaviour
     public int exDamage;
     public bool bombTypeP;
 
-    private void Start()
-    {
-
-    }
-
-
     private void Update()
     {
         Destroy(gameObject, .3f);
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

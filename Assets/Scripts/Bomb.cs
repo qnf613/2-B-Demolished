@@ -18,7 +18,6 @@ public class Bomb : MonoBehaviour
     private void Start()
     {
         gameObject.layer = 16;
-        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Invoke("Blowup", countdown);

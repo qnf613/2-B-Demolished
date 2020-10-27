@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject bomb;
     public bool isDamaged = false;
     [SerializeField] private float invincibleTime;
     private float toBeVincible;
@@ -13,7 +12,8 @@ public class PlayerController : MonoBehaviour
     public int currentHP;
     public int maxBomb;
     public static int bombOnMap; //it used in PlayerController, Bomb, BombManager scripts
-    [SerializeField] private int tempMaxBombViwer;
+    //game clear condition related
+    public bool hasKey;
     //component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -23,18 +23,23 @@ public class PlayerController : MonoBehaviour
     private float h;
     private float v;
     private bool isHorizonMove;
-    
+    //Bomba&Bomba swaprelated
+    [SerializeField] private GameObject Pbomb;
+    [SerializeField] private GameObject Wbomb;
+    [SerializeField] private bool bomba;
+    [SerializeField] private bool bamba;
+
     private void Awake()
     {
         currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
+        hasKey = false;
     }
 
     private void Update()
     {
-        tempMaxBombViwer = bombOnMap;
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -118,7 +123,14 @@ public class PlayerController : MonoBehaviour
         if (!hit.collider)
         {
             bombOnMap++;
-            Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+            if (bomba)
+            {
+                Instantiate(Pbomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+            }
+            else if (bamba)
+            {
+                Instantiate(Wbomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+            }
         }
 
     }

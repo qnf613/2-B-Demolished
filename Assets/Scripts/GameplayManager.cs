@@ -7,14 +7,9 @@ public class GameplayManager : MonoBehaviour
 {
     [SerializeField] private string CurrentScene;
     private float pushTime = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {

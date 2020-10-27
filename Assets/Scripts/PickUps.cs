@@ -14,7 +14,6 @@ public class PickUps : MonoBehaviour
     private void Awake()
     {
         isInvincible = true;
-        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
