@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //chaging playable character related
+    [SerializeField] private GameObject wBomb;
+    [SerializeField] private GameObject pBomb;
+    [SerializeField] private GameObject Bomba;
+    [SerializeField] private GameObject Bamba;
+    [SerializeField] private bool swapSwitch;
+    //parameters
     public bool isDamaged = false;
     [SerializeField] private float invincibleTime;
     private float toBeVincible;
@@ -16,30 +23,24 @@ public class PlayerController : MonoBehaviour
     public bool hasKey;
     //component
     private Rigidbody2D rigid;
-    private SpriteRenderer spriteRenderer;
-    private Animator anima;
     public LayerMask levelMask;
     //values of movement
-    private float h;
-    private float v;
+    public float h;
+    public float v;
     private bool isHorizonMove;
-    //Bomba&Bomba swaprelated
-    [SerializeField] private GameObject Pbomb;
-    [SerializeField] private GameObject Wbomb;
-    [SerializeField] private bool bomba;
-    [SerializeField] private bool bamba;
-
+    
     private void Awake()
     {
         currentHP = maxHP;
         rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anima = GetComponent<Animator>();
         hasKey = false;
+        Bomba.SetActive(false);
     }
 
     private void Update()
     {
+        //debugs
+        Debug.Log(currentHP);
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -61,21 +62,22 @@ public class PlayerController : MonoBehaviour
         {
             isHorizonMove = h != 0;
         }
-
-        //Animation
-        if (anima.GetInteger("hAxisRaw") != h)
+        //swap the bomba&bamba
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            anima.SetBool("isChange", true);
-            anima.SetInteger("hAxisRaw", (int)h);
-        }
-        else if (anima.GetInteger("vAxisRaw") != v)
-        {
-            anima.SetBool("isChange", true);
-            anima.SetInteger("vAxisRaw", (int)v);
-        }
-        else
-        {
-            anima.SetBool("isChange", false);
+            if (swapSwitch)
+            {
+                Bomba.SetActive(false);
+                Bamba.SetActive(true);
+                swapSwitch = false;
+            }
+            else
+            {
+                Bamba.SetActive(false);
+                Bomba.SetActive(true);
+                swapSwitch = true;
+            }
+            
         }
         //Bomb plant
         if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)
@@ -123,13 +125,13 @@ public class PlayerController : MonoBehaviour
         if (!hit.collider)
         {
             bombOnMap++;
-            if (bomba)
+            if (swapSwitch)
             {
-                Instantiate(Pbomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+                Instantiate(pBomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
             }
-            else if (bamba)
+            else
             {
-                Instantiate(Wbomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+                Instantiate(wBomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y)), transform.rotation);
             }
         }
 
