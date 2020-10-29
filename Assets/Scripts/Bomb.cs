@@ -9,6 +9,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private int damage;
     private float toBeNormalBomb = 0;
     [SerializeField] private bool isBombTypeP;
+    [SerializeField] private bool isBlowUp = false;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -17,7 +18,6 @@ public class Bomb : MonoBehaviour
     private void Start()
     {
         gameObject.layer = 16;
-        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Invoke("Blowup", countdown);
@@ -48,19 +48,23 @@ public class Bomb : MonoBehaviour
             gameObject.layer = 15;
         }
 
+        if (isBlowUp)
+        {
+            PlayerController.bombOnMap--;
+            isBlowUp = false;
+        }
     }
 
     private void Blowup()
     {
+        isBlowUp = true;
         Instantiate(explosion, transform.position, transform.rotation);
         StartCoroutine(CreateExplosions(Vector2.up));
         StartCoroutine(CreateExplosions(Vector2.right));
         StartCoroutine(CreateExplosions(Vector2.down));
         StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
-        PlayerController.bombOnMap--;
         Destroy(gameObject, .1f);
-
     }
 
     private IEnumerator CreateExplosions(Vector3 direction)

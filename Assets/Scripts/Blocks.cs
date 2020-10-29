@@ -27,7 +27,6 @@ public class Blocks : MonoBehaviour
     {
         currentHP = maxHP;
         generateOnce = 0;
-        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 

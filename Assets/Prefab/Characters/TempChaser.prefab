@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1698746019}
   - component: {fileID: 1698746020}
-  - component: {fileID: 1698746021}
   - component: {fileID: 8291816412572078199}
   m_Layer: 11
   m_Name: DamageTrigger
@@ -59,19 +58,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &1698746021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698746018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 381b416022ae263408530b8d3e6eda8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHP: 0
 --- !u!50 &8291816412572078199
 Rigidbody2D:
   serializedVersion: 4
@@ -107,6 +93,7 @@ GameObject:
   - component: {fileID: 6154903058248609600}
   - component: {fileID: 6154903058248609601}
   - component: {fileID: 1692877111208354320}
+  - component: {fileID: 4695579167249528061}
   m_Layer: 11
   m_Name: TempChaser
   m_TagString: Enemies
@@ -194,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   maxHP: 2
+  currentHP: 0
   speed: 1
   nextMove: 0
   isTargeting: 0
@@ -256,3 +244,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.7, y: 0.95}
   m_Direction: 0
+--- !u!95 &4695579167249528061
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154903058248609611}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfe28d73a968afb4495c63326bd1a673, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

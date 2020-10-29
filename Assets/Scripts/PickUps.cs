@@ -14,7 +14,6 @@ public class PickUps : MonoBehaviour
     private void Awake()
     {
         isInvincible = true;
-        rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
@@ -47,9 +46,9 @@ public class PickUps : MonoBehaviour
             
             if (gameObject.name == "ExtraBomb(Clone)")
             {
-                if (player.maxBomb < 9)
+                if (player.maxBomb < 5)
                 {
-                    player.maxBomb++;
+                    player.maxBomb += 1;
                 }
                 Destroy(gameObject);
             }
