@@ -12,6 +12,7 @@ public class Blocks : MonoBehaviour
     public int pickupNum;
     //chance to get pick up item
     [SerializeField] [Tooltip("possibility of pickup items appear (%)")] private float pickupChance;
+    //generate one pick up item per block
     [SerializeField] private int generateOnce;
     public int maxHP;
     public int currentHP;
@@ -56,7 +57,6 @@ public class Blocks : MonoBehaviour
         //pop up the random pick up item randomly when blocks are destroyed 
         if (Random.Range(1, 101) <= pickupChance)
         {
-            //for now, speed up item must appear after soft block destoryed
             pickupNum = Random.Range(0, 3);
             switch (pickupNum)
             {

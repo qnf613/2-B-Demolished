@@ -20,7 +20,7 @@ public class Explosion : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (!player.isDamaged)
             {
-                player.currentHP--;
+                PlayerController.currentHP--;
                 player.isDamaged = true;
             }
         }

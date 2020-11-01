@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
     private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
     [SerializeField] private bool bomber = false;
     //check up how many enemies on the stage
-    public static int number;
+    public static int numberLeft;
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
         anima.SetBool("isCharge", false);
         if (gameObject.activeSelf == true)
         {
-            number++;
+            numberLeft++;
         }
     }
 
@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         //death condition
         if (currentHP <= 0)
         {
-            number--;
+            numberLeft--;
             Destroy(gameObject);
         }
 

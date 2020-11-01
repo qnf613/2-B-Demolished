@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     private float toBeVincible;
     public float speed;
     public int maxHP;
-    public int currentHP;
-    public int maxBomb;
+    public static int currentHP;
+    public static int maxBomb = 2;
     public static int bombOnMap; //it used in PlayerController, Bomb, BombManager scripts
     //game clear condition related
     public bool hasKey;
@@ -39,8 +39,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //debugs
-        Debug.Log(currentHP);
         //Input value
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
@@ -62,8 +60,8 @@ public class PlayerController : MonoBehaviour
         {
             isHorizonMove = h != 0;
         }
-        //swap the bomba&bamba
-        if (Input.GetKeyDown(KeyCode.E))
+        //Swap the bomba & bamba
+        if (Input.GetKeyDown(KeyCode.E) && bombOnMap == 0)
         {
             if (swapSwitch)
             {
@@ -79,11 +77,12 @@ public class PlayerController : MonoBehaviour
             }
             
         }
-        //Bomb plant
+        //Bomb plant, if player reached maximum number of the bomb it can plant, player can not plant the bomb
         if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)
         {
             CreateBombs();
         }
+        //sometimes number of the bomb get lower than 0, it will fix that
         if (bombOnMap <= 0)
         {
             bombOnMap = 0;
@@ -139,6 +138,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        //when player contact with enemy, player get damage
         if (other.gameObject.tag == "Enemies" && !isDamaged)
         {
             currentHP--;
