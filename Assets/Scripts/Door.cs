@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private string nextSceneName;
     //componemts
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;

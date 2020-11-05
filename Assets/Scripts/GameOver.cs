@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
-    [SerializeField] private GameObject Panel;
+    [SerializeField] private GameObject StageClearPanel;
+    [SerializeField] private GameObject GameOverPanel;
     private void Awake()
     {
-        Panel.SetActive(false);
+        StageClearPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
     }
 
     private void Update()
@@ -15,7 +17,13 @@ public class GameOver : MonoBehaviour
         if (GameObject.Find("Player") == null)
         {
             Debug.Log("GameOver!");
-            Panel.SetActive(true);
+            GameOverPanel.SetActive(true);
+        }
+
+        if (GameObject.Find("Door") == null)
+        {
+            Debug.Log("StageClear!");
+            StageClearPanel.SetActive(true);
         }
     }
 }
