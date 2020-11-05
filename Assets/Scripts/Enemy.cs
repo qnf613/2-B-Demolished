@@ -104,6 +104,12 @@ public class Enemy : MonoBehaviour
         {
             anima.SetBool("isChange", false);
         }
+        //reset the number of enemy left when the player re-start the game
+        if (GameplayManager.isRestarted)
+        {
+            numberLeft = 0;
+            GameplayManager.isRestarted = false;
+        }
     }
 
     private void FixedUpdate()

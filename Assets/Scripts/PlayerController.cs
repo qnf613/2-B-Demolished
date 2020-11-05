@@ -16,8 +16,9 @@ public class PlayerController : MonoBehaviour
     private float toBeVincible;
     public float speed;
     public int maxHP;
+    public int defaultBombs;
     public static int currentHP;
-    public static int maxBomb = 2;
+    public static int maxBomb;
     public static int bombOnMap; //it used in PlayerController, Bomb, BombManager scripts
     //game clear condition related
     public bool hasKey;
@@ -28,10 +29,10 @@ public class PlayerController : MonoBehaviour
     public float h;
     public float v;
     private bool isHorizonMove;
-    
     private void Awake()
     {
         currentHP = maxHP;
+        maxBomb = defaultBombs;
         rigid = GetComponent<Rigidbody2D>();
         hasKey = false;
         Bomba.SetActive(false);
@@ -107,7 +108,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        
     }
 
     private void FixedUpdate()

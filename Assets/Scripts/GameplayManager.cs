@@ -8,6 +8,8 @@ public class GameplayManager : MonoBehaviour
     //this script will control re-start and force quit the game
     [SerializeField] private string CurrentScene;
     private float pushTime = 0;
+    //restart
+    public static bool isRestarted = false;
 
     private void Update()
     {
@@ -23,6 +25,7 @@ public class GameplayManager : MonoBehaviour
             pushTime += Time.deltaTime;
             if (pushTime >= 2f)
             {
+                isRestarted = true;
                 SceneManager.LoadScene(CurrentScene);
             }
         }

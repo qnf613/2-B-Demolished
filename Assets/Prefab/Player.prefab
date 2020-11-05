@@ -75,6 +75,7 @@ MonoBehaviour:
   invincibleTime: 2
   speed: 3
   maxHP: 3
+  defaultBombs: 2
   hasKey: 0
   levelMask:
     serializedVersion: 2
