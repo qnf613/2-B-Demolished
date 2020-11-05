@@ -21,6 +21,7 @@ public class PickUps : MonoBehaviour
 
     private void Update()
     {
+        //pick up item will not destrotyed by explosion right after it generated
         toBeVincible += Time.deltaTime;
         if (toBeVincible >= invincibleDuration)
         {
@@ -31,7 +32,7 @@ public class PickUps : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //do different damage to other game objects depend on their tag
+        //do different funtion to player object depends on its type
         if (other.tag == "Player")
         {
             PlayerController player = other.GetComponent<PlayerController>();
@@ -46,18 +47,18 @@ public class PickUps : MonoBehaviour
             
             if (gameObject.name == "ExtraBomb(Clone)")
             {
-                if (player.maxBomb < 5)
+                if (PlayerController.maxBomb < 5)
                 {
-                    player.maxBomb += 1;
+                    PlayerController.maxBomb += 1;
                 }
                 Destroy(gameObject);
             }
 
             if (gameObject.name == "HealthUp(Clone)")
             {
-                if (player.currentHP < player.maxHP)
+                if (PlayerController.currentHP < player.maxHP)
                 {
-                    player.currentHP++;
+                    PlayerController.currentHP++;
                     Destroy(gameObject);
                 }
             }

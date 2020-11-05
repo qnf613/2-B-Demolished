@@ -6,19 +6,17 @@ public class PlayerAnimation : MonoBehaviour
 {
 
     private Animator anima;
-    private SpriteRenderer spriteRenderer;
     private float h;
     private float v;
 
     private void Awake()
     {
         anima = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     private void Update()
     {
+        //receive the input to turn on the animation
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         //Animation

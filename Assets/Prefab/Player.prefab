@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &161860805
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5602353656367870499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84c94370b3368c6498a6dede0b36e79f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7257222812875699509
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,8 +75,7 @@ MonoBehaviour:
   invincibleTime: 2
   speed: 3
   maxHP: 3
-  currentHP: 0
-  maxBomb: 2
+  defaultBombs: 2
   hasKey: 0
   levelMask:
     serializedVersion: 2
@@ -163,6 +181,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038310, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038310, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038310, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038310, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4376231836577913517, guid: f2ed5daf2abdfd44cbe32680059ca3de,
+        type: 3}
     - target: {fileID: 8465042528925038312, guid: fea88873e495cb44c9cf450a59c6c9a0,
         type: 3}
       propertyPath: m_Name
@@ -204,6 +243,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092396, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3622522476337434029, guid: 1501c9f4e3256dd4ab87d126b4683ee7,
+        type: 3}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.x

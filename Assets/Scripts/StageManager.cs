@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class StageManager : MonoBehaviour
 {
-    [SerializeField] private GameObject key;
 
+    [SerializeField] private GameObject key;
+    
     private void Update()
     {
-        if (Enemy.number <= 0)
+        //this script check up the clear conditions and generate the key
+        if (Enemy.numberLeft <= 0)
         {
             Instantiate(key, transform.position, transform.rotation);
             Destroy(gameObject);
