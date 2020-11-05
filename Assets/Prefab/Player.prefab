@@ -195,6 +195,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038310, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -4376231836577913517, guid: f2ed5daf2abdfd44cbe32680059ca3de,
+        type: 3}
     - target: {fileID: 8465042528925038312, guid: fea88873e495cb44c9cf450a59c6c9a0,
         type: 3}
       propertyPath: m_Name
@@ -205,8 +211,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6660969060573055889, guid: fea88873e495cb44c9cf450a59c6c9a0, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea88873e495cb44c9cf450a59c6c9a0, type: 3}
 --- !u!1 &5602353656367870499 stripped
 GameObject:
@@ -237,6 +242,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092396, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3622522476337434029, guid: 1501c9f4e3256dd4ab87d126b4683ee7,
+        type: 3}
     - target: {fileID: 2956994984157092399, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}
       propertyPath: m_LocalPosition.x
