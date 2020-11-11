@@ -44,10 +44,10 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         //Check button up & down
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = Input.GetButtonDown("Horizontal"); //horizontal pressed
+        bool hUp = Input.GetButtonUp("Horizontal"); //horizontal released
+        bool vDown = Input.GetButtonDown("Vertical"); //vertical pressed
+        bool vUp = Input.GetButtonUp("Vertical"); //vertical released
         //Cross direction movement
         if (hDown)
         {

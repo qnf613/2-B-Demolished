@@ -5,6 +5,8 @@ using UnityEngine;
 public class PickUps : MonoBehaviour
 {
     [SerializeField] private float invincibleDuration = 1f;
+    private int bombLimit = 5;
+    private float speedLimite = 7;
     private float toBeVincible = 0;
     public bool isInvincible;
     //component
@@ -38,7 +40,7 @@ public class PickUps : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (gameObject.name == "SpeedUp(Clone)")
             {
-                if (player.speed < 7)
+                if (player.speed < speedLimite)
                 {
                     player.speed += .8f;
                 }
@@ -47,7 +49,7 @@ public class PickUps : MonoBehaviour
             
             if (gameObject.name == "ExtraBomb(Clone)")
             {
-                if (PlayerController.maxBomb < 5)
+                if (PlayerController.maxBomb < bombLimit)
                 {
                     PlayerController.maxBomb += 1;
                 }

@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 160151783}
   - component: {fileID: 160151782}
   m_Layer: 5
-  m_Name: Instruction
+  m_Name: Instructions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82548d0fa627b6d4fac96eb97e31a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: 
+  nextSceneName: Instructions
   CurrentScene: 
 --- !u!114 &160151783
 MonoBehaviour:
@@ -516,7 +516,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Instruction
+  m_Text: Instructions
 --- !u!222 &182937203
 CanvasRenderer:
   m_ObjectHideFlags: 0

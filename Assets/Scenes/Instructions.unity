@@ -356,8 +356,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Controls \n\nMonements: Arrows\n\nBomb Plant: Space bar\n\nCharacter Chage:
-    E\n(in possible stages) "
+  m_Text: "Controls \n\nMovements: Arrows keys or WASD\n\nBomb Plant: Space bar\n\nCharacter
+    Chage: E\n(in possible stages) "
 --- !u!222 &786459245
 CanvasRenderer:
   m_ObjectHideFlags: 0
