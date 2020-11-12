@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7311872979247334136}
   - component: {fileID: 8585837479789992518}
   m_Layer: 11
-  m_Name: TempCharger
+  m_Name: Charger
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e050f21eb200db84dbf86d8a8a1dbb5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2453285233579465699}
+  target: {fileID: 0}
   maxHP: 2
   currentHP: 0
   speed: 1
