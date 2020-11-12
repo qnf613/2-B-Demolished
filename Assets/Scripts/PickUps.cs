@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
+    [SerializeField] private GameObject feedbacks;
     [SerializeField] private float invincibleDuration = 1f;
     private int bombLimit = 5;
     private float speedLimite = 7;
@@ -44,7 +45,6 @@ public class PickUps : MonoBehaviour
                 {
                     player.speed += .8f;
                 }
-                Destroy(gameObject);
             }
             
             if (gameObject.name == "ExtraBomb(Clone)")
@@ -53,7 +53,6 @@ public class PickUps : MonoBehaviour
                 {
                     PlayerController.maxBomb += 1;
                 }
-                Destroy(gameObject);
             }
 
             if (gameObject.name == "HealthUp(Clone)")
@@ -61,9 +60,12 @@ public class PickUps : MonoBehaviour
                 if (PlayerController.currentHP < player.maxHP)
                 {
                     PlayerController.currentHP++;
-                    Destroy(gameObject);
                 }
             }
+
+            Instantiate(feedbacks, transform.position, transform.rotation);
+            Destroy(gameObject);
+
         }
     }
 
