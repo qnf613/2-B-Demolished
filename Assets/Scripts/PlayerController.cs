@@ -23,8 +23,9 @@ public class PlayerController : MonoBehaviour
     //game clear condition related
     public bool hasKey;
     //component
-    private Rigidbody2D rigid;
+    public Rigidbody2D rigid;
     public LayerMask levelMask;
+    public SpriteRenderer sRenderer;
     //values of movement
     public float h;
     public float v;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         hasKey = false;
         Bomba.SetActive(false);
+        sRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void Update()
@@ -44,10 +46,10 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
         //Check button up & down
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = Input.GetButtonDown("Horizontal"); //horizontal pressed
+        bool hUp = Input.GetButtonUp("Horizontal"); //horizontal released
+        bool vDown = Input.GetButtonDown("Vertical"); //vertical pressed
+        bool vUp = Input.GetButtonUp("Vertical"); //vertical released
         //Cross direction movement
         if (hDown)
         {
@@ -91,6 +93,7 @@ public class PlayerController : MonoBehaviour
         //Damage taken condition & invincible
         if (isDamaged)
         {
+            sRenderer.color = new Color(1, 1, 1, .4f);
             gameObject.layer = 10;
             toBeVincible += Time.deltaTime;
             if (toBeVincible >= invincibleTime)
@@ -102,6 +105,7 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.layer = 9;
             toBeVincible = 0;
+            sRenderer.color = new Color(1, 1, 1, 1);
         }
         //Death condition
         if (currentHP <= 0)

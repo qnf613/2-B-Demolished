@@ -15,7 +15,7 @@ public class SceneButtons : MonoBehaviour
 
     public void loadInstruction()
     {
-        SceneManager.LoadScene("Instruction");
+        SceneManager.LoadScene("Instructions");
     }
 
     public void exitGame()
