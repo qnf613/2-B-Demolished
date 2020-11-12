@@ -564,14 +564,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '1. Add tutorial stages that teach the player how to play this game
+  m_Text: '1. Add stage that encourage to use Bomba
 
 
-    2.
-    Add stage that encourage to use Bomba
-
-
-    3. Add fonts and apply to all texts'
+    2. Apply sound effects'
 --- !u!222 &814711959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -630,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 115}
-  m_SizeDelta: {x: 548.75934, y: 109.793884}
+  m_AnchoredPosition: {x: 0, y: 145.51}
+  m_SizeDelta: {x: 548.75934, y: 48.76779}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070790242
 MonoBehaviour:
@@ -805,8 +801,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -121.5, y: 36.3}
-  m_SizeDelta: {x: 403.0088, y: 102.53998}
+  m_AnchoredPosition: {x: -121.5, y: 71.61}
+  m_SizeDelta: {x: 403.0088, y: 31.924072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1404804567
 MonoBehaviour:
@@ -840,7 +836,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: The next updates will be...
+  m_Text: The next main updates will be...
 --- !u!222 &1404804568
 CanvasRenderer:
   m_ObjectHideFlags: 0

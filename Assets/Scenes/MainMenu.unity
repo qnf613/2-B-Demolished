@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82548d0fa627b6d4fac96eb97e31a580, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: TempStage
+  nextSceneName: Tutorial
   CurrentScene: 
 --- !u!114 &1049572800
 MonoBehaviour:

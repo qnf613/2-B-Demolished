@@ -2245,7 +2245,7 @@ PrefabInstance:
     - target: {fileID: 8807173433013311041, guid: fb38675d44258ea41a8ab953a10dfb32,
         type: 3}
       propertyPath: m_Name
-      value: SpeedUp
+      value: SpeedUp(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 8807173433013311044, guid: fb38675d44258ea41a8ab953a10dfb32,
         type: 3}
@@ -3806,7 +3806,7 @@ PrefabInstance:
     - target: {fileID: 6755102272871595813, guid: 84dbc308ebd88fd42b52c700d161f4b9,
         type: 3}
       propertyPath: m_Name
-      value: ExtraBomb
+      value: ExtraBomb(Clone)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84dbc308ebd88fd42b52c700d161f4b9, type: 3}
@@ -5517,7 +5517,7 @@ PrefabInstance:
     - target: {fileID: 1303417994693001417, guid: 2aa8475546384ef4a9ce7e4844be30b6,
         type: 3}
       propertyPath: m_Name
-      value: HealthUp
+      value: HealthUp(Clone)
       objectReference: {fileID: 0}
     - target: {fileID: 1303417994693001420, guid: 2aa8475546384ef4a9ce7e4844be30b6,
         type: 3}
@@ -6971,12 +6971,12 @@ PrefabInstance:
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.3867e-41
+      value: 2.4046e-41
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000004027082
+      value: 0.00000405735
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
