@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7257222812875699505}
   - component: {fileID: 7257222812875699504}
   - component: {fileID: 7257222812875699507}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -58,9 +58,11 @@ MonoBehaviour:
   maxHP: 3
   defaultBombs: 2
   hasKey: 0
+  rigid: {fileID: 0}
   levelMask:
     serializedVersion: 2
     m_Bits: 65536
+  sRenderer: {fileID: 0}
   h: 0
   v: 0
 --- !u!70 &7257222812875699504
@@ -167,6 +169,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomba
       objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038312, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465042528925038312, guid: fea88873e495cb44c9cf450a59c6c9a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fea88873e495cb44c9cf450a59c6c9a0, type: 3}
 --- !u!1 &5602353656367870499 stripped
@@ -197,6 +209,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092386, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 2956994984157092386, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2956994984157092396, guid: 13ccde1495b8b5a4eb606a49fde8ee2b,
         type: 3}

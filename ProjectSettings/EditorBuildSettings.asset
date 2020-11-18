@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: bc7a05ff825c0554e90443936bf00c85
   - enabled: 1
-    path: Assets/Scenes/TempStage.unity
+    path: Assets/Scenes/Stage1.unity
     guid: 2c03cc33139321840951521d3ebe6363
   - enabled: 1
     path: Assets/Scenes/NextUpdate.unity
