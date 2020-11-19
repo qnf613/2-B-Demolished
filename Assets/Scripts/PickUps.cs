@@ -39,6 +39,18 @@ public class PickUps : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerController player = other.GetComponent<PlayerController>();
+            
+            if (gameObject.name == "HealthUp(Clone)")
+            {
+                if (PlayerController.currentHP < player.maxHP)
+                {
+                    PlayerController.currentHP++;
+                    Instantiate(feedbacks, transform.position, transform.rotation);
+                    SoundManager.instance.PlayAcquire();
+                    Destroy(gameObject);
+                }
+            }
+
             if (gameObject.name == "SpeedUp(Clone)")
             {
                 if (player.speed < speedLimite)
@@ -46,7 +58,6 @@ public class PickUps : MonoBehaviour
                     player.speed += .8f;
                     Instantiate(feedbacks, transform.position, transform.rotation);
                 }
-                Destroy(gameObject);
             }
             
             if (gameObject.name == "ExtraBomb(Clone)")
@@ -56,19 +67,10 @@ public class PickUps : MonoBehaviour
                     PlayerController.maxBomb += 1;
                     Instantiate(feedbacks, transform.position, transform.rotation);
                 }
-                Destroy(gameObject);
             }
 
-            if (gameObject.name == "HealthUp(Clone)")
-            {
-                if (PlayerController.currentHP < player.maxHP)
-                {
-                    PlayerController.currentHP++;
-                    Instantiate(feedbacks, transform.position, transform.rotation);
-                    Destroy(gameObject);
-                }
-            }
+            SoundManager.instance.PlayAcquire();
+            Destroy(gameObject);
         }
     }
-
 }

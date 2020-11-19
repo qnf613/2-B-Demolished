@@ -21,6 +21,7 @@ public class Bomb : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         Invoke("Blowup", countdown);
+        SoundManager.instance.PlayCountdown();
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector2.down));
         StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
+        SoundManager.instance.PlayExplosion();
         Destroy(gameObject, .1f);
     }
     //crete explosion

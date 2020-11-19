@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StageManager : MonoBehaviour
+public class KeyGenerator : MonoBehaviour
 {
 
     [SerializeField] private GameObject key;

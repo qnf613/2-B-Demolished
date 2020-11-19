@@ -110,6 +110,7 @@ public class PlayerController : MonoBehaviour
         //Death condition
         if (currentHP <= 0)
         {
+            SoundManager.instance.PlayGameOver();
             Destroy(gameObject);
         }
         
@@ -147,6 +148,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Enemies" && !isDamaged)
         {
             currentHP--;
+            SoundManager.instance.PlayDamaged();
             isDamaged = true;
         }
     }

@@ -13,10 +13,10 @@ public class SceneButtons : MonoBehaviour
         SceneManager.LoadScene("Credit");
     }
 
-    public void loadInstruction()
-    {
-        SceneManager.LoadScene("Instructions");
-    }
+    //public void loadInstruction()
+    //{
+    //    SceneManager.LoadScene("Instructions");
+    //}
 
     public void exitGame()
     {

@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (player.hasKey)
             {
-                Debug.Log("Stage Clear!");
+                SoundManager.instance.PlayStageClear();
                 Destroy(gameObject);
             }
         }

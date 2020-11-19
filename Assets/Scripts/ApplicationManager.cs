@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameplayManager : MonoBehaviour
+public class ApplicationManager : MonoBehaviour
 {
     //this script will control re-start and force quit the game
     [SerializeField] private string CurrentScene;
