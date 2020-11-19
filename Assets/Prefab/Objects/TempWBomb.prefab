@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3148040651936342619}
   - component: {fileID: 4200574886110267932}
   - component: {fileID: 3714952168724672214}
+  - component: {fileID: 9039489610444739495}
   m_Layer: 16
   m_Name: TempWBomb
   m_TagString: BombJustPlanted
@@ -74,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -492303463
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 928bff3dec7111c4b835a1c090f37288, type: 3}
+  m_Sprite: {fileID: 3809180857312985664, guid: d362e45d3436e364a84c6a892509e7c0,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,3 +171,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &9039489610444739495
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840950153566739554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 196f2240038a99242b9284ea64f8bbba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

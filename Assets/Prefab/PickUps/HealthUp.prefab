@@ -143,5 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91177cd454be7e47b12e8341a4e2c4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  feedbacks: {fileID: 2985718439367369025, guid: 63ca99bea8edce64c93a703cdfc9d3e9,
+    type: 3}
   invincibleDuration: 1
   isInvincible: 0

@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PickUps : MonoBehaviour
 {
+    [SerializeField] private GameObject feedbacks;
     [SerializeField] private float invincibleDuration = 1f;
+    private int bombLimit = 5;
+    private float speedLimite = 7;
     private float toBeVincible = 0;
     public bool isInvincible;
     //component
@@ -36,33 +39,38 @@ public class PickUps : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerController player = other.GetComponent<PlayerController>();
-            if (gameObject.name == "SpeedUp(Clone)")
-            {
-                if (player.speed < 7)
-                {
-                    player.speed += .8f;
-                }
-                Destroy(gameObject);
-            }
             
-            if (gameObject.name == "ExtraBomb(Clone)")
-            {
-                if (PlayerController.maxBomb < 5)
-                {
-                    PlayerController.maxBomb += 1;
-                }
-                Destroy(gameObject);
-            }
-
             if (gameObject.name == "HealthUp(Clone)")
             {
                 if (PlayerController.currentHP < player.maxHP)
                 {
                     PlayerController.currentHP++;
+                    Instantiate(feedbacks, transform.position, transform.rotation);
+                    SoundManager.instance.PlayAcquire();
                     Destroy(gameObject);
                 }
             }
+
+            if (gameObject.name == "SpeedUp(Clone)")
+            {
+                if (player.speed < speedLimite)
+                {
+                    player.speed += .8f;
+                    Instantiate(feedbacks, transform.position, transform.rotation);
+                }
+            }
+            
+            if (gameObject.name == "ExtraBomb(Clone)")
+            {
+                if (PlayerController.maxBomb < bombLimit)
+                {
+                    PlayerController.maxBomb += 1;
+                    Instantiate(feedbacks, transform.position, transform.rotation);
+                }
+            }
+
+            SoundManager.instance.PlayAcquire();
+            Destroy(gameObject);
         }
     }
-
 }

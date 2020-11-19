@@ -19,6 +19,7 @@ public class Key : MonoBehaviour
         {
             PlayerController player = other.GetComponent<PlayerController>();
             player.hasKey = true;
+            SoundManager.instance.PlayAcquire();
             Destroy(gameObject);
         }
     }

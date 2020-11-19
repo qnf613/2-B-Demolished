@@ -13,7 +13,7 @@ public class Blocks : MonoBehaviour
     //chance to get pick up item
     [SerializeField] [Tooltip("possibility of pickup items appear (%)")] private float pickupChance;
     //generate one pick up item per block
-    [SerializeField] private int generateOnce;
+    [SerializeField] private bool generateOnce;
     public int maxHP;
     public int currentHP;
     //make block get damage once per .5 sec
@@ -27,14 +27,14 @@ public class Blocks : MonoBehaviour
     private void Awake()
     {
         currentHP = maxHP;
-        generateOnce = 0;
+        generateOnce = false;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
     {
         //Destroy Condition
-        if (currentHP <= 0 && generateOnce < 1)
+        if (currentHP <= 0 && !generateOnce)
         {
             GetComponent<SpriteRenderer>().enabled = false;
             GeneratePickUp();
@@ -62,15 +62,15 @@ public class Blocks : MonoBehaviour
             {
                 case 0:
                     Instantiate(speedUp, transform.position, transform.rotation);
-                    generateOnce++;
+                    generateOnce = true;
                     break;
                 case 1:
                     Instantiate(maxBombUp, transform.position, transform.rotation);
-                    generateOnce++;
+                    generateOnce = true;
                     break;
                 case 2:
                     Instantiate(hpUp, transform.position, transform.rotation);
-                    generateOnce++;
+                    generateOnce = true;
                     break;
             }
         }

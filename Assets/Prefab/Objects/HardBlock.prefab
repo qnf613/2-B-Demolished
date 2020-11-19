@@ -102,7 +102,7 @@ MonoBehaviour:
     type: 3}
   hpUp: {fileID: 1303417994693001417, guid: 2aa8475546384ef4a9ce7e4844be30b6, type: 3}
   pickupNum: 0
-  pickupChance: 0
+  pickupChance: 10
   generateOnce: 0
   maxHP: 2
   currentHP: 0

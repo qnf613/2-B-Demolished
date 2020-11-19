@@ -14,7 +14,7 @@ public class GameOver : MonoBehaviour
 
     private void Update()
     {
-        if (GameObject.Find("Player") == null)
+        if (GameObject.FindGameObjectWithTag("Player") == null)
         {
             Debug.Log("GameOver!");
             GameOverPanel.SetActive(true);
@@ -25,5 +25,6 @@ public class GameOver : MonoBehaviour
             Debug.Log("StageClear!");
             StageClearPanel.SetActive(true);
         }
+
     }
 }
