@@ -10,6 +10,9 @@ public class Bomb : MonoBehaviour
     private float toBeNormalBomb = 0;
     [SerializeField] private bool isBombTypeP;
     [SerializeField] private bool isBlowUp = false;
+    private float invincibleDuration = 1;
+    private float timeToDestroy = .1f;
+    private float timeToExplode = .05f;
     //Component
     private Rigidbody2D rigid;
     private SpriteRenderer spriteRenderer;
@@ -41,7 +44,7 @@ public class Bomb : MonoBehaviour
 
         //turn bomb to normal bomb, <<explanation>> player will not be blocked by the bomb it planted for a second
         toBeNormalBomb += Time.deltaTime;
-        if (toBeNormalBomb >= 1f)
+        if (toBeNormalBomb >= invincibleDuration)
         {
             gameObject.tag = "PlayerBomb";
         }
@@ -67,7 +70,7 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector2.left));
         GetComponent<SpriteRenderer>().enabled = false;
         SoundManager.instance.PlayExplosion();
-        Destroy(gameObject, .1f);
+        Destroy(gameObject, timeToDestroy);
     }
     //crete explosion
     private IEnumerator CreateExplosions(Vector3 direction)
@@ -89,7 +92,7 @@ public class Bomb : MonoBehaviour
                     break;
                 }
 
-                yield return new WaitForSeconds(.05f);
+                yield return new WaitForSeconds(timeToExplode);
             }
         }
         //if its wide bomb, which is bamba's bomb, explosion will blocked by hard block & undestroyable objects
@@ -109,7 +112,7 @@ public class Bomb : MonoBehaviour
                     break;
                 }
 
-                yield return new WaitForSeconds(.05f);
+                yield return new WaitForSeconds(timeToExplode);
             }
         }
 
@@ -119,7 +122,7 @@ public class Bomb : MonoBehaviour
     {
         if (other.tag == "Explosion")
         {
-            Invoke("Blowup", .1f);
+            Invoke("Blowup", timeToDestroy);
         }
     }
 }
