@@ -117,6 +117,8 @@ MonoBehaviour:
   timeToNextPattern: 0.2
   bomb: {fileID: 4283220869018172359, guid: b43056c89808ca74b8e5a02ac3c77055, type: 3}
   electricField: {fileID: 9050649077966393201}
+  isDamaged: 0
+  invincibleTime: 1
 --- !u!50 &119855613532835722
 Rigidbody2D:
   serializedVersion: 4

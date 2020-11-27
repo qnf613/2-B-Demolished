@@ -35,6 +35,10 @@ public class Enemy : MonoBehaviour
     private float patternDucation = 2.5f;
     [SerializeField] private GameObject bomb;
     [SerializeField] private GameObject electricField;
+    public bool isDamaged = false;
+    [SerializeField] private float invincibleTime;
+    private float toBeVincible;
+    public static int bossHp;
     //check up how many enemies on the stage
     public static int numberLeft;
 
@@ -126,6 +130,27 @@ public class Enemy : MonoBehaviour
         {
             numberLeft = 0;
             ApplicationManager.isRestarted = false;
+        }
+
+        //check up boss enemy's current HP for UI
+        if (boss)
+        {
+            bossHp = currentHP;
+        }
+
+        if (isDamaged)
+        {
+            spriteRenderer.color = new Color(1, 0, 0, .4f);
+            toBeVincible += Time.deltaTime;
+            if (toBeVincible >= invincibleTime)
+            {
+                isDamaged = false;
+            }
+        }
+        else if (!isDamaged)
+        {
+            toBeVincible = 0;
+            spriteRenderer.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -345,20 +370,21 @@ public class Enemy : MonoBehaviour
     private IEnumerator Patterns()
     {
         //randomly select pattern that boss gonna do
-        pattern = Random.Range(0, 3);
+        pattern = Random.Range(0, 4);
         yield return new WaitForSeconds(timeToNextPattern);
         
             switch (pattern)
             {
                 case 0:
+                case 1:
                     //do nothing
                     StartCoroutine(doNothing());
                     break;
-                case 1:
+                case 2:
                     //summons the bombs
                     StartCoroutine(bombDrop());
                     break;
-                case 2:
+                case 3:
                     //electric shock
                     StartCoroutine(electricShock());
                     break;

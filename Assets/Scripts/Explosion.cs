@@ -52,7 +52,11 @@ public class Explosion : MonoBehaviour
             if (other.tag == "EnemyDamage")
             {
                 Enemy enemy = other.GetComponentInParent<Enemy>();
-                enemy.currentHP -= exDamage;
+                if (!enemy.isDamaged)
+                {
+                    enemy.currentHP -= exDamage;
+                    enemy.isDamaged = true;
+                }
             }
         }
         
