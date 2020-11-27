@@ -6,14 +6,13 @@ public class BossStageAlter : MonoBehaviour
 {
     AudioSource AS;
     [SerializeField] private GameObject warningPanel;
-    [SerializeField] private AudioClip warning;
     [SerializeField] private AudioClip bgm;
 
     public void Awake()
     {
+        //pause the game
         Time.timeScale = 0;
         AS = GetComponentInParent<AudioSource>();
-        AS.clip = warning;
         AS.playOnAwake = true;
     }
 
