@@ -53,7 +53,7 @@ public class Bomb : MonoBehaviour
             gameObject.layer = 15;
         }
         //if bomb destroyed, number of the bomb player planted on the map will decrease
-        if (isBlowUp)
+        if (isBlowUp && this.gameObject.tag != "EnemyBomb")
         {
             PlayerController.bombOnMap--;
             isBlowUp = false;

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7416184193306489058}
   - component: {fileID: 1313195403328255732}
   m_Layer: 15
-  m_Name: BossBomb(Temp)
+  m_Name: BossBomb
   m_TagString: EnemyBomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -492303463
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4309301051881964775, guid: 5d6fcd9d1160f9e44927f22b053c93b7,
+  m_Sprite: {fileID: -4032173514411287835, guid: 6a2ce53ca3fb9b14da5e3924565d0d9e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
     type: 3}
   countdown: 3
   damage: 3
-  isBombTypeP: 0
+  isBombTypeP: 1
   isBlowUp: 0
   levelMask:
     serializedVersion: 2
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 4283220869018172359}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8ff1468cbf3f00d42a963b890a5220cf, type: 2}
+  m_Controller: {fileID: 9100000, guid: 83c8030f734f3ac41a2f8b582d8d22af, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

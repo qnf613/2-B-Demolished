@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
         anima = GetComponent<Animator>();
         if (boss)
         {
+            anima.SetInteger("HP", maxHP);
             electricField.SetActive(false);
             StartCoroutine(Patterns());
         }
@@ -395,13 +396,14 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator doNothing()
     {
+        anima.SetInteger("HP", currentHP);
         yield return new WaitForSeconds(patternDucation);
         StartCoroutine(Patterns());
     }
 
     private IEnumerator bombDrop()
     {
-        //anima.SetTrigger();
+        anima.SetBool("bombing", true);
         //set up the delays between each bomb set up (.2 sec for each)
         float plantNextBomb = .2f;
         Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x + 3), Mathf.RoundToInt(transform.position.y)), transform.rotation);
@@ -420,19 +422,19 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(plantNextBomb);
         Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x + 3), Mathf.RoundToInt(transform.position.y + 3)), transform.rotation);
         yield return new WaitForSeconds(patternDucation);
+        anima.SetBool("bombing", false);
         StartCoroutine(Patterns());
     }
 
     private IEnumerator electricShock()
     {
-        SpriteRenderer electricRenderer;
         CircleCollider2D electricity;
-        electricRenderer = electricField.GetComponentInChildren<SpriteRenderer>();
         electricity = electricField.GetComponentInChildren<CircleCollider2D>();
-        //anima.SetTrigger();
+        anima.SetBool("electricShock", true);
         electricField.SetActive(true);  
         yield return new WaitForSeconds(patternDucation);
         electricField.SetActive(false);
+        anima.SetBool("electricShock", false);
         StartCoroutine(Patterns());
     }
 }
