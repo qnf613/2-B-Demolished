@@ -428,6 +428,7 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator electricShock()
     {
+        SoundManager.instance.PlayElectric();
         CircleCollider2D electricity;
         electricity = electricField.GetComponentInChildren<CircleCollider2D>();
         anima.SetBool("electricShock", true);
