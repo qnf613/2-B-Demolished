@@ -29,7 +29,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool isHolding = false;
     [SerializeField] private bool isCharging = false;
     private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
-    [SerializeField] private bool bomber = false;
+    [SerializeField] private bool boss = false;
+    [SerializeField] private int pattern;
+    [SerializeField] private float timeToNextPattern = .5f;
+    private float patternDucation = 2.5f;
+    [SerializeField] private GameObject bomb;
+    [SerializeField] private GameObject electricField;
+    public bool isDamaged = false;
+    [SerializeField] private float invincibleTime;
+    private float toBeVincible;
+    public static int bossHp;
     //check up how many enemies on the stage
     public static int numberLeft;
 
@@ -44,12 +53,24 @@ public class Enemy : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
-        StartCoroutine("ChangeMovement");
+        if (boss)
+        {
+            anima.SetInteger("HP", maxHP);
+            electricField.SetActive(false);
+            StartCoroutine(Patterns());
+        }
+        else if (chaser || charger)
+        {
+            StartCoroutine(ChangeMovement());
+        }
+
         anima.SetBool("isCharge", false);
+
         if (gameObject.activeSelf == true)
         {
             numberLeft++;
         }
+        
     }
 
     private void Update()
@@ -104,18 +125,44 @@ public class Enemy : MonoBehaviour
         {
             anima.SetBool("isChange", false);
         }
+
         //reset the number of enemy left when the player re-start the game
         if (ApplicationManager.isRestarted)
         {
             numberLeft = 0;
             ApplicationManager.isRestarted = false;
         }
+
+        //check up boss enemy's current HP for UI
+        if (boss)
+        {
+            bossHp = currentHP;
+        }
+
+        if (isDamaged)
+        {
+            spriteRenderer.color = new Color(1, 0, 0, .4f);
+            toBeVincible += Time.deltaTime;
+            if (toBeVincible >= invincibleTime)
+            {
+                isDamaged = false;
+            }
+        }
+        else if (!isDamaged)
+        {
+            toBeVincible = 0;
+            spriteRenderer.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void FixedUpdate()
     {
-        Move();
-        
+        //boss will not move around
+        if (!boss)
+        {
+            Move();
+        }
+
         if (isTargeting)
         {
             if (chaser)
@@ -126,11 +173,6 @@ public class Enemy : MonoBehaviour
             else if (charger)
             {
                 Charge();
-            }
-
-            else if (bomber)
-            {
-
             }
         }
     }
@@ -176,7 +218,7 @@ public class Enemy : MonoBehaviour
         {
             target = trigger.gameObject;
             isTargeting = true;
-            StopCoroutine("ChangeMovement");
+            StopCoroutine(ChangeMovement());
         }
     }
 
@@ -186,7 +228,7 @@ public class Enemy : MonoBehaviour
         if (trigger.gameObject.CompareTag("Player"))
         {
             isTargeting = true;
-            StopCoroutine("ChangeMovement");
+            StopCoroutine(ChangeMovement());
         }
     }
 
@@ -196,7 +238,10 @@ public class Enemy : MonoBehaviour
         if (trigger.gameObject.CompareTag("Player"))
         {
             isTargeting = false;
-            StartCoroutine("ChangeMovement");
+            if (chaser || charger)
+            {
+                StartCoroutine(ChangeMovement());
+            }
         }
     }
 
@@ -208,7 +253,7 @@ public class Enemy : MonoBehaviour
         float nextDirectionTime = Random.Range(1f, 2f);
         yield return new WaitForSeconds(nextDirectionTime);
         //repeat this method itself
-        StartCoroutine("ChangeMovement");
+        StartCoroutine(ChangeMovement());
     }
 
     //ability of each type of enemy
@@ -283,7 +328,6 @@ public class Enemy : MonoBehaviour
         else if (holding >= chargeDuration && isHolding)
         {
             Debug.ClearDeveloperConsole();
-            Debug.Log("Now it's charging");
             isCharging = true;
             isHolding = false;
         }
@@ -323,5 +367,75 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //multiple patterns of boss monster
+    private IEnumerator Patterns()
+    {
+        //randomly select pattern that boss gonna do
+        pattern = Random.Range(0, 4);
+        yield return new WaitForSeconds(timeToNextPattern);
+        
+            switch (pattern)
+            {
+                case 0:
+                case 1:
+                    //do nothing
+                    StartCoroutine(doNothing());
+                    break;
+                case 2:
+                    //summons the bombs
+                    StartCoroutine(bombDrop());
+                    break;
+                case 3:
+                    //electric shock
+                    StartCoroutine(electricShock());
+                    break;
+            }
+        
+        
+    }
 
+    private IEnumerator doNothing()
+    {
+        anima.SetInteger("HP", currentHP);
+        yield return new WaitForSeconds(patternDucation);
+        StartCoroutine(Patterns());
+    }
+
+    private IEnumerator bombDrop()
+    {
+        anima.SetBool("bombing", true);
+        //set up the delays between each bomb set up (.2 sec for each)
+        float plantNextBomb = .2f;
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x + 3), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x + 3), Mathf.RoundToInt(transform.position.y -3)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y - 3)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x - 3), Mathf.RoundToInt(transform.position.y -3)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x - 3), Mathf.RoundToInt(transform.position.y)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x - 3), Mathf.RoundToInt(transform.position.y + 3)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y + 3)), transform.rotation);
+        yield return new WaitForSeconds(plantNextBomb);
+        Instantiate(bomb, new Vector2(Mathf.RoundToInt(transform.position.x + 3), Mathf.RoundToInt(transform.position.y + 3)), transform.rotation);
+        yield return new WaitForSeconds(patternDucation);
+        anima.SetBool("bombing", false);
+        StartCoroutine(Patterns());
+    }
+
+    private IEnumerator electricShock()
+    {
+        SoundManager.instance.PlayElectric();
+        CircleCollider2D electricity;
+        electricity = electricField.GetComponentInChildren<CircleCollider2D>();
+        anima.SetBool("electricShock", true);
+        electricField.SetActive(true);  
+        yield return new WaitForSeconds(patternDucation);
+        electricField.SetActive(false);
+        anima.SetBool("electricShock", false);
+        StartCoroutine(Patterns());
+    }
 }

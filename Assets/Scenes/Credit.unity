@@ -794,7 +794,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -817,7 +817,21 @@ MonoBehaviour:
     BGMs,
     Stage clear and Game Over SE by Mrthenoronha.
 
-    https://freesound.org/people/Mrthenoronha/'
+    https://freesound.org/people/Mrthenoronha/
+
+
+    boss
+    Alter SE by danielnieto7.
+
+    https://freesound.org/people/danielnieto7/
+
+
+    electricity
+    Se by bevibeldesign.
+
+    https://freesound.org/people/bevibeldesign/
+
+'
 --- !u!222 &1217712464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -951,7 +965,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 18
+    m_FontSize: 17
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1

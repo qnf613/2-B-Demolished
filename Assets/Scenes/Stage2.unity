@@ -38414,7 +38414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 902546546, guid: d283b461432f6ac41a3794a5a30aed3f, type: 3}
       propertyPath: nextSceneName
-      value: NextUpdate
+      value: Stage3
       objectReference: {fileID: 0}
     - target: {fileID: 1509309998, guid: d283b461432f6ac41a3794a5a30aed3f, type: 3}
       propertyPath: nextSceneName
@@ -38452,12 +38452,12 @@ PrefabInstance:
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 3.4724e-41
+      value: 3.4769e-41
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000005859241
+      value: 0.000005866808
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}

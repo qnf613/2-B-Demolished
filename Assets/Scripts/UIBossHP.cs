@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIPlayerInfo : MonoBehaviour
+public class UIBossHP : MonoBehaviour
 {
     Text UI;
     public void Awake()
@@ -13,6 +13,6 @@ public class UIPlayerInfo : MonoBehaviour
 
     public void Update()
     {
-        UI.text = "HP: " + PlayerController.currentHP + " | Max Bomb: " + PlayerController.maxBomb + "\nBomb On The Map: " + PlayerController.bombOnMap;
+        UI.text = "Boss HP: " + Enemy.bossHp.ToString();
     }
 }
