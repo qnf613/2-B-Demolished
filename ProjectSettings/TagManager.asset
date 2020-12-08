@@ -16,6 +16,7 @@ TagManager:
   - EnemyDamage
   - Explosion
   - PlayerBomb
+  - EnemyBomb
   layers:
   - Default
   - TransparentFX

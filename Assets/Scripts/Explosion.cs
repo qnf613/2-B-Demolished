@@ -47,13 +47,19 @@ public class Explosion : MonoBehaviour
             }
         }
 
-        if (other.tag == "EnemyDamage")
+        if (this.tag == "Explosion")
         {
-            Enemy enemy = other.GetComponentInParent<Enemy>();
-            enemy.currentHP -= exDamage;
+            if (other.tag == "EnemyDamage")
+            {
+                Enemy enemy = other.GetComponentInParent<Enemy>();
+                if (!enemy.isDamaged)
+                {
+                    enemy.currentHP -= exDamage;
+                    enemy.isDamaged = true;
+                }
+            }
         }
-
-
+        
         if (other.tag == "PickUps")
         {
             PickUps pickup = other.GetComponent<PickUps>();
