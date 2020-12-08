@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -146,7 +146,6 @@ MonoBehaviour:
   acquire: {fileID: 8300000, guid: 893692e062768cc4ea2afb1e14df1ae4, type: 3}
   gameOver: {fileID: 8300000, guid: b238c5adf596d4341b3176744398a6ad, type: 3}
   stageClear: {fileID: 8300000, guid: c4b675e4bd6be6146b4fc1d1252956d6, type: 3}
-  electric: {fileID: 0}
 --- !u!1 &2460293156015437829
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2460293156015437829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 377, y: 212, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2531062391663043033}
@@ -205,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2531062391663043035}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 58.49, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7115884866779712773}

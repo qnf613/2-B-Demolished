@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3714952168724672214}
   - component: {fileID: 9039489610444739495}
   m_Layer: 16
-  m_Name: WBomb
+  m_Name: TempWBomb
   m_TagString: BombJustPlanted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -13,6 +13,8 @@ public class UIPlayerInfo : MonoBehaviour
 
     public void Update()
     {
+        PlayerController playerInfo = GetComponent<PlayerController>();
+
         UI.text = "HP: " + PlayerController.currentHP + " | Max Bomb: " + PlayerController.maxBomb + "\nBomb On The Map: " + PlayerController.bombOnMap;
     }
 }

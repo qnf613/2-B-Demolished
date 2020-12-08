@@ -42,51 +42,48 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        //disable all of inputs until notification gone
-        if (!BossStageAlter.isWarningOn)
+        //Input value
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");
+        //Check button up & down
+        bool hDown = Input.GetButtonDown("Horizontal"); //horizontal pressed
+        bool hUp = Input.GetButtonUp("Horizontal"); //horizontal released
+        bool vDown = Input.GetButtonDown("Vertical"); //vertical pressed
+        bool vUp = Input.GetButtonUp("Vertical"); //vertical released
+        //Cross direction movement
+        if (hDown)
         {
-            //Input value
-            h = Input.GetAxisRaw("Horizontal");
-            v = Input.GetAxisRaw("Vertical");
-            //Check button up & down
-            bool hDown = Input.GetButtonDown("Horizontal"); //horizontal pressed
-            bool hUp = Input.GetButtonUp("Horizontal"); //horizontal released
-            bool vDown = Input.GetButtonDown("Vertical"); //vertical pressed
-            bool vUp = Input.GetButtonUp("Vertical"); //vertical released
-                                                      //Cross direction movement
-            if (hDown)
+            isHorizonMove = true;
+        }
+        else if (vDown)
+        {
+            isHorizonMove = false;
+        }
+        else if (hUp || vUp)
+        {
+            isHorizonMove = h != 0;
+        }
+        //Swap the bomba & bamba
+        if (Input.GetKeyDown(KeyCode.E) && bombOnMap == 0)
+        {
+            if (swapSwitch)
             {
-                isHorizonMove = true;
+                Bomba.SetActive(false);
+                Bamba.SetActive(true);
+                swapSwitch = false;
             }
-            else if (vDown)
+            else
             {
-                isHorizonMove = false;
+                Bamba.SetActive(false);
+                Bomba.SetActive(true);
+                swapSwitch = true;
             }
-            else if (hUp || vUp)
-            {
-                isHorizonMove = h != 0;
-            }
-            //Swap the bomba & bamba
-            if (Input.GetKeyDown(KeyCode.E) && bombOnMap == 0)
-            {
-                if (swapSwitch)
-                {
-                    Bomba.SetActive(false);
-                    Bamba.SetActive(true);
-                    swapSwitch = false;
-                }
-                else
-                {
-                    Bamba.SetActive(false);
-                    Bomba.SetActive(true);
-                    swapSwitch = true;
-                }
-            }
-            //Bomb plant, if player reached maximum number of the bomb it can plant, player can not plant the bomb
-            if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)
-            {
-                CreateBombs();
-            }
+            
+        }
+        //Bomb plant, if player reached maximum number of the bomb it can plant, player can not plant the bomb
+        if (Input.GetKeyDown(KeyCode.Space) && -1 < bombOnMap && bombOnMap < maxBomb)
+        {
+            CreateBombs();
         }
         //sometimes number of the bomb get lower than 0, it will fix that
         if (bombOnMap <= 0)

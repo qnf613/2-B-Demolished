@@ -5,7 +5,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private AudioSource audio;
-    private AudioSource bgmAudio;
     public static SoundManager instance;
 
     public AudioClip damaged;
@@ -14,7 +13,6 @@ public class SoundManager : MonoBehaviour
     public AudioClip acquire;
     public AudioClip gameOver;
     public AudioClip stageClear;
-    public AudioClip electric;
 
     void Awake()
     {
@@ -26,7 +24,6 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        bgmAudio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     public void PlayDamaged()
@@ -49,20 +46,13 @@ public class SoundManager : MonoBehaviour
         audio.PlayOneShot(acquire);
     }
 
-    public void PlayGameOver()
+    public void PlayGameOver() 
     {
-        bgmAudio.clip = null;
         audio.PlayOneShot(gameOver);
     }
     public void PlayStageClear()
     {
-        bgmAudio.clip = null; 
         audio.PlayOneShot(stageClear);
-    }
-
-    public void PlayElectric()
-    {
-        audio.PlayOneShot(electric);
     }
 
 }

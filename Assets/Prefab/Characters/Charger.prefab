@@ -111,9 +111,7 @@ MonoBehaviour:
   chargeDuration: 2
   isHolding: 0
   isCharging: 0
-  boss: 0
-  pattern: 0
-  timeToNextPattern: 0.2
+  bomber: 0
 --- !u!50 &2453285233579465704
 Rigidbody2D:
   serializedVersion: 4
@@ -255,7 +253,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.95}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &320663000475526367
 Rigidbody2D:
