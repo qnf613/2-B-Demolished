@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0924182ca8163a84b90a3a32c186c7b2
+guid: 95dac9f12732ed2458943f73ef880ea4
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -50,6 +50,18 @@ TextureImporter:
   - first:
       213: 5964939794417294212
     second: Charger_15
+  - first:
+      213: -100206330922927620
+    second: Charger_16
+  - first:
+      213: -5355040041273313496
+    second: Charger_17
+  - first:
+      213: 8719860762058122982
+    second: Charger_18
+  - first:
+      213: -7338636438062849136
+    second: Charger_19
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -172,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -193,7 +205,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -214,7 +226,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 51
+        y: 68
         width: 16
         height: 16
       alignment: 0
@@ -235,7 +247,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 34
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -256,7 +268,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 34
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -277,7 +289,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 34
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -298,7 +310,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 34
+        y: 51
         width: 16
         height: 16
       alignment: 0
@@ -319,7 +331,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 17
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -340,7 +352,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 17
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -361,7 +373,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 17
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -382,7 +394,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 17
+        y: 34
         width: 16
         height: 16
       alignment: 0
@@ -403,7 +415,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -424,7 +436,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 17
-        y: 0
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -445,7 +457,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 34
-        y: 0
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -466,7 +478,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 51
-        y: 0
+        y: 17
         width: 16
         height: 16
       alignment: 0
@@ -478,6 +490,90 @@ TextureImporter:
       bones: []
       spriteID: 48b95d0b329b7c250800000000000000
       internalID: 5964939794417294212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9f7197fdefb9ef0800000000000000
+      internalID: -100206330922927620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_17
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82739e564731fa5b0800000000000000
+      internalID: -5355040041273313496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_18
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6675dc92b230970800000000000000
+      internalID: 8719860762058122982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charger_19
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093a6859a0de72a90800000000000000
+      internalID: -7338636438062849136
       vertices: []
       indices: 
       edges: []

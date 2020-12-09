@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1227570471
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2255384044103032568, guid: 0924182ca8163a84b90a3a32c186c7b2,
+  m_Sprite: {fileID: 2255384044103032568, guid: 95dac9f12732ed2458943f73ef880ea4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,6 +114,10 @@ MonoBehaviour:
   boss: 0
   pattern: 0
   timeToNextPattern: 0.2
+  bomb: {fileID: 0}
+  electricField: {fileID: 0}
+  isDamaged: 0
+  invincibleTime: 0
 --- !u!50 &2453285233579465704
 Rigidbody2D:
   serializedVersion: 4
