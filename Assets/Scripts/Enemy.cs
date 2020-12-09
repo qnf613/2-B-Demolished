@@ -326,7 +326,7 @@ public class Enemy : MonoBehaviour
                 {
                     chargeDirection = 4;
                 }
-            }=
+            }
         }
         
         else if (holding >= chargeDuration && isHolding)
