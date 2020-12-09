@@ -126,13 +126,6 @@ public class Enemy : MonoBehaviour
             anima.SetBool("isChange", false);
         }
 
-        //reset the number of enemy left when the player re-start the game
-        if (ApplicationManager.isRestarted)
-        {
-            numberLeft = 0;
-            ApplicationManager.isRestarted = false;
-        }
-
         //check up boss enemy's current HP for UI
         if (boss)
         {

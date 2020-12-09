@@ -25,6 +25,7 @@ public class ApplicationManager : MonoBehaviour
             pushTime += Time.deltaTime;
             if (pushTime >= 2f)
             {
+                Enemy.numberLeft = 0;//reset the number of enemy left when the player re-start the game
                 isRestarted = true;
                 SceneManager.LoadScene(CurrentScene);
             }
