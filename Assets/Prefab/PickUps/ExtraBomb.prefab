@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7002466560403390476}
   - component: {fileID: 220942158189562749}
   - component: {fileID: 7565168906855094408}
-  - component: {fileID: 91478891998373328}
   m_Layer: 0
   m_Name: ExtraBomb
   m_TagString: PickUps
@@ -74,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -492303463
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 9060671832507364854, guid: f72d30ebd95f6fd46b56f57e55fe0607,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: f72d30ebd95f6fd46b56f57e55fe0607, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,22 +147,3 @@ MonoBehaviour:
     type: 3}
   invincibleDuration: 1
   isInvincible: 0
---- !u!95 &91478891998373328
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6755102272871595813}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 382d39bf3b7361f4c9867f4ab66839f6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

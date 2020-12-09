@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8807173433013311042}
   - component: {fileID: 8807173433013311045}
   - component: {fileID: 8807173433013311046}
-  - component: {fileID: 8256058937090915023}
   m_Layer: 0
   m_Name: SpeedUp
   m_TagString: PickUps
@@ -74,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -492303463
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: -4115439610729684787, guid: 807b30a0fb005e04386f0f50b367e03d,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 807b30a0fb005e04386f0f50b367e03d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -149,22 +147,3 @@ MonoBehaviour:
     type: 3}
   invincibleDuration: 1
   isInvincible: 0
---- !u!95 &8256058937090915023
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8807173433013311041}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d14b879a3b103634db901257396ba232, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

@@ -11,24 +11,13 @@ public class ApplicationManager : MonoBehaviour
     //restart
     public static bool isRestarted = false;
 
-    private void Awake()
-    {
-        if (pushTime != 0)
-        {
-            pushTime = 0;
-        }
-    }
-
     private void Update()
     {
         //if player press the esc, game will be set down   
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pushTime += Time.deltaTime;
-            if (pushTime >= 2f)
-            {
-                Application.Quit();
-            }
+            Debug.Log("Application force quited");
+            Application.Quit();
         }
         //if player press the R for 2 seconds, stage will be re-start
         if (Input.GetKey(KeyCode.R))
@@ -36,7 +25,6 @@ public class ApplicationManager : MonoBehaviour
             pushTime += Time.deltaTime;
             if (pushTime >= 2f)
             {
-                Enemy.numberLeft = 0;//reset the number of enemy left when the player re-start the game
                 isRestarted = true;
                 SceneManager.LoadScene(CurrentScene);
             }
