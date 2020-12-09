@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     //component
     Rigidbody2D rigid;
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer sRenderer;
     Animator anima;
     [SerializeField] GameObject target;
     //other values
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     private float charging = 0;
     [SerializeField] private bool isHolding = false;
     [SerializeField] private bool isCharging = false;
-    private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
+    public int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
     [SerializeField] private bool boss = false;
     [SerializeField] private int pattern;
     [SerializeField] private float timeToNextPattern = .5f;
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
         //keep original speed for 'charger' to back to normal speed from charge speed
         originalSpeed = speed;
         rigid = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        sRenderer = GetComponent<SpriteRenderer>();
         anima = GetComponent<Animator>();
         if (boss)
         {
@@ -102,12 +102,10 @@ public class Enemy : MonoBehaviour
             chargeDirection = 0;
             speed = originalSpeed;
             charging = 0;
-            anima.SetBool("isCharge", false);
         }
         else if (isCharging)
         {
             charging += Time.deltaTime;
-            anima.SetBool("isCharge", true);
         }
 
         //animation
@@ -126,13 +124,6 @@ public class Enemy : MonoBehaviour
             anima.SetBool("isChange", false);
         }
 
-        //reset the number of enemy left when the player re-start the game
-        if (ApplicationManager.isRestarted)
-        {
-            numberLeft = 0;
-            ApplicationManager.isRestarted = false;
-        }
-
         //check up boss enemy's current HP for UI
         if (boss)
         {
@@ -141,7 +132,7 @@ public class Enemy : MonoBehaviour
 
         if (isDamaged)
         {
-            spriteRenderer.color = new Color(1, 0, 0, .4f);
+            sRenderer.color = new Color(1, 0, 0, .4f);
             toBeVincible += Time.deltaTime;
             if (toBeVincible >= invincibleTime)
             {
@@ -151,7 +142,7 @@ public class Enemy : MonoBehaviour
         else if (!isDamaged)
         {
             toBeVincible = 0;
-            spriteRenderer.color = new Color(1, 1, 1, 1);
+            sRenderer.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -174,6 +165,18 @@ public class Enemy : MonoBehaviour
             {
                 Charge();
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (isHolding)
+        {
+            sRenderer.color = new Color(1,0,0,0.6f);
+        }
+        else if (!isHolding)
+        {
+            sRenderer.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -293,9 +296,10 @@ public class Enemy : MonoBehaviour
         Vector3 myPos = gameObject.transform.position;
 
         isHolding = true;
+
+        anima.SetBool("isChange", false);
         if (holding < 2f)
         {
-            Debug.ClearDeveloperConsole();
             rigid.velocity = new Vector2(0, 0);
 
             if (Mathf.Abs(targetPos.y - myPos.y) > Mathf.Abs(targetPos.x - myPos.x))
@@ -327,7 +331,6 @@ public class Enemy : MonoBehaviour
         
         else if (holding >= chargeDuration && isHolding)
         {
-            Debug.ClearDeveloperConsole();
             isCharging = true;
             isHolding = false;
         }
@@ -363,7 +366,6 @@ public class Enemy : MonoBehaviour
         else if (charging >= chargeDuration)
         {
             isCharging = false;
-            anima.SetBool("isCharge", false);
         }
     }
 

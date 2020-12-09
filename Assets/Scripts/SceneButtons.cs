@@ -31,6 +31,7 @@ public class SceneButtons : MonoBehaviour
 
     public void reStart()
     {
+        Enemy.numberLeft = 0;//reset the number of enemy left when the player re-start the game
         SceneManager.LoadScene(CurrentScene);
     }
 
