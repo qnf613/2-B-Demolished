@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
     private float charging = 0;
     [SerializeField] private bool isHolding = false;
     [SerializeField] private bool isCharging = false;
-    private int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
+    public int chargeDirection; //1 = up, 2 = down, 3 = right, 4 = left
     [SerializeField] private bool boss = false;
     [SerializeField] private int pattern;
     [SerializeField] private float timeToNextPattern = .5f;
@@ -95,7 +95,6 @@ public class Enemy : MonoBehaviour
         }
         else if (isHolding)
         {
-            sRenderer.color = new Color(1, 0, 0, .4f);
             holding += Time.deltaTime;
         }
         if (!isCharging)
@@ -103,12 +102,10 @@ public class Enemy : MonoBehaviour
             chargeDirection = 0;
             speed = originalSpeed;
             charging = 0;
-            anima.SetBool("isCharge", false);
         }
         else if (isCharging)
         {
             charging += Time.deltaTime;
-            anima.SetBool("isCharge", true);
         }
 
         //animation
@@ -168,6 +165,18 @@ public class Enemy : MonoBehaviour
             {
                 Charge();
             }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (isHolding)
+        {
+            sRenderer.color = new Color(1,0,0,0.6f);
+        }
+        else if (!isHolding)
+        {
+            sRenderer.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -287,9 +296,10 @@ public class Enemy : MonoBehaviour
         Vector3 myPos = gameObject.transform.position;
 
         isHolding = true;
+
+        anima.SetBool("isChange", false);
         if (holding < 2f)
         {
-            Debug.ClearDeveloperConsole();
             rigid.velocity = new Vector2(0, 0);
 
             if (Mathf.Abs(targetPos.y - myPos.y) > Mathf.Abs(targetPos.x - myPos.x))
@@ -316,12 +326,11 @@ public class Enemy : MonoBehaviour
                 {
                     chargeDirection = 4;
                 }
-            }
+            }=
         }
         
         else if (holding >= chargeDuration && isHolding)
         {
-            Debug.ClearDeveloperConsole();
             isCharging = true;
             isHolding = false;
         }
@@ -357,7 +366,6 @@ public class Enemy : MonoBehaviour
         else if (charging >= chargeDuration)
         {
             isCharging = false;
-            anima.SetBool("isCharge", false);
         }
     }
 
