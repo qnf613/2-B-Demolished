@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd372d87648b5c4083136a7c7dd1871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wBomb: {fileID: 4840950153566739554, guid: bf806c97f8c3cac4691092f7f5419d6d, type: 3}
-  pBomb: {fileID: 1057459731951035670, guid: ed03da0a6cf97564f869ba13b7fce2b2, type: 3}
+  wBomb: {fileID: 4840950153566739554, guid: 57a4f6a6a71d607449058577441167a0, type: 3}
+  pBomb: {fileID: 1057459731951035670, guid: 7931f54ac1ecfe74db942a0ad09dba12, type: 3}
   Bomba: {fileID: 5602353656367870499}
   Bamba: {fileID: 6708414993472534557}
   swapSwitch: 0

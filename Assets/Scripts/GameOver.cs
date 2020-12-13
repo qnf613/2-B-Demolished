@@ -6,25 +6,24 @@ public class GameOver : MonoBehaviour
 {
     [SerializeField] private GameObject StageClearPanel;
     [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private GameObject door;
     private void Awake()
     {
         StageClearPanel.SetActive(false);
         GameOverPanel.SetActive(false);
+        door = GameObject.Find("Door");
     }
 
     private void Update()
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
         {
-            Debug.Log("GameOver!");
             GameOverPanel.SetActive(true);
         }
 
-        if (GameObject.Find("Door") == null)
+        if (door.GetComponent<Door>().isOpen)
         {
-            Debug.Log("StageClear!");
             StageClearPanel.SetActive(true);
         }
-
     }
 }

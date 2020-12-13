@@ -674,7 +674,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Press E to change
 
-    the character to bomba'
+    characters'
 --- !u!222 &213301034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2066,7 +2066,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -322.46, y: -212.79}
-  m_SizeDelta: {x: 15.357616, y: 2.397767}
+  m_SizeDelta: {x: 16.756207, y: 2.397767}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &565456523
 MonoBehaviour:
@@ -7993,7 +7993,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "If charger turns to red, \nit means this charger will rush onto you soon"
+  m_Text: "If charger turns to red, \nit means this charger will rush onto you soon."
 --- !u!222 &2129637613
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8047,7 +8047,7 @@ PrefabInstance:
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0500003
+      value: 1.0500002
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
@@ -8062,12 +8062,12 @@ PrefabInstance:
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1.3567e-41
+      value: 1.6034e-41
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000022890379
+      value: 0.0000027052226
       objectReference: {fileID: 0}
     - target: {fileID: 921979833613613564, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
@@ -8117,12 +8117,12 @@ PrefabInstance:
     - target: {fileID: 4184257900880980174, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.456364e-13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4184257900880980174, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000011920929
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4184257900880980174, guid: d283b461432f6ac41a3794a5a30aed3f,
         type: 3}
@@ -66598,10 +66598,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -234947854936911212, guid: 6a5e7cf23b3c75048a84af2358532301,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4025117658114077361, guid: 6a5e7cf23b3c75048a84af2358532301,
+        type: 3}
+      propertyPath: isOpen
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8957331542382285977, guid: 6a5e7cf23b3c75048a84af2358532301,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 51.29
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 8957331542382285977, guid: 6a5e7cf23b3c75048a84af2358532301,
         type: 3}

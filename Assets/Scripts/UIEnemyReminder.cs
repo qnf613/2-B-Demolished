@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIEnemyReminder : MonoBehaviour
 {
-    Text UI;
+    public static Text UI;
     public void Awake()
     {
         UI = GetComponent<Text>();

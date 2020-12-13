@@ -129,21 +129,6 @@ public class Enemy : MonoBehaviour
         {
             bossHp = currentHP;
         }
-
-        if (isDamaged)
-        {
-            sRenderer.color = new Color(1, 0, 0, .4f);
-            toBeVincible += Time.deltaTime;
-            if (toBeVincible >= invincibleTime)
-            {
-                isDamaged = false;
-            }
-        }
-        else if (!isDamaged)
-        {
-            toBeVincible = 0;
-            sRenderer.color = new Color(1, 1, 1, 1);
-        }
     }
 
     private void FixedUpdate()
@@ -170,14 +155,37 @@ public class Enemy : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (isHolding)
+        //charger's charging indicator
+        if (charger)
         {
-            sRenderer.color = new Color(1,0,0,0.6f);
+            if (isHolding)
+            {
+                sRenderer.color = new Color(1, 0, 0, 0.6f);
+            }
+            else if (!isHolding)
+            {
+                sRenderer.color = new Color(1, 1, 1, 1);
+            }
         }
-        else if (!isHolding)
+        //boss' damaged indicator
+        if (boss)
         {
-            sRenderer.color = new Color(1, 1, 1, 1);
+            if (isDamaged)
+            {
+                sRenderer.color = new Color(1, 0, 0, .4f);
+                toBeVincible += Time.deltaTime;
+                if (toBeVincible >= invincibleTime)
+                {
+                    isDamaged = false;
+                }
+            }
+            else if (!isDamaged)
+            {
+                toBeVincible = 0;
+                sRenderer.color = new Color(1, 1, 1, 1);
+            }
         }
+        
     }
 
     private void Move()
