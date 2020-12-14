@@ -20,6 +20,7 @@ public class Explosion : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             if (!player.isDamaged)
             {
+                SoundManager.instance.PlayDamaged();
                 PlayerController.currentHP--;
                 player.isDamaged = true;
             }

@@ -96,7 +96,6 @@ public class PlayerController : MonoBehaviour
         //Damage taken condition & invincible
         if (isDamaged)
         {
-            sRenderer.color = new Color(1, 1, 1, .4f);
             gameObject.layer = 10;
             toBeVincible += Time.deltaTime;
             if (toBeVincible >= invincibleTime)
@@ -124,6 +123,15 @@ public class PlayerController : MonoBehaviour
         //Movement
         Vector2 moveVec = isHorizonMove ? new Vector2(h, 0) : new Vector2(0, v);
         rigid.velocity = moveVec * speed;
+    }
+
+    private void LateUpdate()
+    {
+        if (isDamaged)
+        {
+            sRenderer.color = new Color(1, 1, 1, .4f);
+        }
+        
     }
 
     private void CreateBombs()

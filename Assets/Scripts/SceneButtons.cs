@@ -10,7 +10,7 @@ public class SceneButtons : MonoBehaviour
 
     public void loadCredit()
     {
-        SceneManager.LoadScene("Credit");
+        SceneManager.LoadScene("Credits");
     }
 
     public void exitGame()
@@ -21,20 +21,17 @@ public class SceneButtons : MonoBehaviour
 
     public void backToMain()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void reStart()
     {
-        Time.timeScale = 1;
         Enemy.numberLeft = 0;//reset the number of enemy left when the player re-start the game
         SceneManager.LoadScene(CurrentScene);
     }
 
     public void nextStage() 
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(nextSceneName);
     }
 }

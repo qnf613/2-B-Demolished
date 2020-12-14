@@ -1375,7 +1375,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921979833613613561}
-  m_LocalRotation: {x: 0, y: 3.9e-44, z: 0.0000000066197163, w: 1}
+  m_LocalRotation: {x: 0, y: 4.8e-44, z: 0.000000008038227, w: 1}
   m_LocalPosition: {x: -5.95, y: 1.0500003, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1733,7 +1733,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: -492303463
-  m_SortingOrder: 3
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &921979835173081244
 MonoBehaviour:
@@ -1788,6 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageClearPanel: {fileID: 8213965772160819688}
   GameOverPanel: {fileID: 921979835182611234}
+  door: {fileID: 0}
 --- !u!1 &921979835182611234
 GameObject:
   m_ObjectHideFlags: 0

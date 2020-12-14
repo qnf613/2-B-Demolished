@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
         StageClearPanel.SetActive(false);
         GameOverPanel.SetActive(false);
         door = GameObject.Find("Door");
+        Time.timeScale = 1;
     }
 
     private void Update()
